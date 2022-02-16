@@ -1,0 +1,51 @@
+/*===== CONTACT ======*/
+.contact{
+    background: linear-gradient(107deg, rgba(95, 143, 255, 0.5) 10%, #FF5F5F 100%);
+  }
+  
+  .contact__container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-height: 100vh;
+  }
+  
+  .form{
+    width: 34vw;
+    height: 78vh;
+    @include desing;
+    box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+  
+  .contact__title{
+    font-size: 2.5rem;
+    color: $white-color;
+    text-align: center;
+  }
+  
+  .form__section{
+    display: flex;
+    padding: $mb-2 $mb-4;
+  }
+    
+  textarea, .input, .in{
+    font-family: 'roboto';
+    font-size: $h2-font-size;
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0.2) 56%);
+    color: $white-color;
+    padding: $mb-2;
+    margin: 0 $mb-4;
+    border-radius: 20px;
+    border: none;
+    resize: none;
+    max-height: 250px;
+    width: 100%;
+  }
+  
+  .button{
+    font-family: 'Open Sans';
+    margin-top: $mb-2;
+  }

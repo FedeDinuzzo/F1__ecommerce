@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>⚡ F1 【Tienda Online】</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="assets/css/sass/main.css">
+
+    <!-- ===== BOXICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="header">
+        <nav class="nav grid">
+            <div>
+                <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
+            </div>
+
+            <div class="nav__menu" id="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#inicio" class="nav__link active">INICIO</a></li>
+                    <li class="nav__item"><a href="index.html#tienda" class="nav__link">TIENDA</a></li>
+                    <li class="nav__item"><a href="index.html #contacto" class="nav__link">CONTACTO</a></li>
+                </ul>
+            </div>
+
+            <a class='nav__account' id="account"><img src="./assets/img/account.svg"></a>
+            <a class='nav__cart' id="cart"><img src="./assets/img/grocery.svg"></a>
+            <div class="count__cart" id="countArea"></div> 
+        </nav>
+    </header>
+
+    <!--===== CART =====-->
+    <section class="shop slide" id="tienda">
+        <div class="shop__container">
+            <div class="shop__header">
+                <ul class="shop__list">
+                    <li class="shop__item" id="pilotos"><a href="" class="shop__link">Pilotos</a></li>
+                    <li class="shop__item" id="hombre"><a href="" class="shop__link">Hombre</a></li>
+                    <li class="shop__item" id="mujer"><a href="" class="shop__link">Mujer</a></li>
+                    <li class="shop__item" id="accesorios"><a href="" class="shop__link">Accesorios</a></li>
+                    <li class="shop__item"><a href="" class="shop__link">Comprar por equipo</a></li>
+                </ul>
+            </div>
+    
+            <!--===== SHOP SIDE-BAR =====-->
+            <div class="shop__asside">
+                <div class="asside">
+                <form class="search" action="">
+                    <input type="text" placeholder="Buscar.." name="search" class="search__bar">
+                    <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
+                </form>
+        
+                <div class="filter__page">
+                    <h2 class="filter__categorie">Hombre<h2>
+                    <li class="filter__number">1</li>
+                </div>
+            </div>
+            </div>
+
+            <!--===== SHOP PRODUCTS =====-->
+            <div class="shop__main">
+                <div class="shop__card" id="productos"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

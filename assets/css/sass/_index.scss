@@ -1,0 +1,165 @@
+/* INDEX.HTML */
+
+/*===== HOME ======*/
+.home {
+  background: linear-gradient(106.83deg, rgba(95, 143, 255, 0.5) 10%, #FF5F5F 100%);
+}
+
+.home__container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 0 100px;
+  min-height: 100vh;
+
+  h1{
+    font-size: $h1-font-size;
+    position: relative;
+  }    
+}
+
+.home__button{
+  margin: $mb-4 0 $mb-2 0;
+  font-size: $h2-font-size;
+}
+
+.home__register{
+  color: $first-color;
+  text-decoration: underline;
+}
+
+/*===== ECOMMERCE ======*/
+.shop{
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: linear-gradient(252deg, rgba(95, 143, 255, 0.5) 10%, #FF5F5F 100%);
+}
+
+.shop__container{
+  @include desing;
+  box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "aside main main"
+  "aside main main";
+  grid-template-rows: repeat(auto-fill, 1fr);
+  height: 88vh;
+  width: 97.6vw;
+  margin-top: 4.6vw;
+}
+
+.shop__header{
+  grid-area: header;
+  @include desing;
+}
+
+.shop__main{
+  grid-area: main;
+}
+
+/*===== GRID HEADER ======*/
+.shop__list{
+  display: flex;
+  height: 1vh;
+  justify-content: center;
+}
+
+.shop__item{
+  font-size: $h2-font-size;
+}
+
+.shop__link{
+  margin: auto $mb-4;
+  font-size: $normal-font-size;
+  color: $white-color;
+}
+
+.shop__icon{
+  margin: auto $mb-1;
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+/*===== GRID MAIN ======*/
+.shop__main{
+  display: flex;
+  flex-direction: column;
+}
+
+.shop__card{
+  display: grid;
+  grid-template-areas:
+    "main main main main"
+    "main main main main";
+  padding: $mb-1;
+  max-height:min-content;
+}
+
+.img__card{
+  display: block;
+  margin: auto;
+  max-height: 260px;
+  margin-bottom: $mb-2;
+}
+
+.product__card{
+  @include desing;
+  margin: $mb-1;
+  padding: $mb-2;
+}
+
+.product__cart{
+  position: absolute;
+  top: $mb-1;
+  right: $mb-2;
+}
+
+.product__name{
+  position: absolute;
+  bottom: $mb-2;
+  left: $mb-2;
+}
+
+.product__price{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/*===== GRID ASIDE ======*/
+.shop__aside{
+  grid-area: aside;
+}
+
+.asside{
+  margin: $mb-2 0 $mb-1 $mb-2;
+  height: 100%;
+  width: 15vw;
+  @include desing;
+  padding: $mb-2;
+}
+
+.search{
+  @include desing;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search__bar{
+  width: 70%;
+  margin: $mb-1;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+
+.search__submit{
+  padding: $mb-1;
+}
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>⚡ F1 【Tienda Online】</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="assets/css/sass/main.css">
+
+    <!-- ===== BOXICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!--===== HEADER =====-->
+    <header class="header">
+        <nav class="nav grid">
+            <div>
+                <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
+            </div>
+
+            <div class="nav__menu" id="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav__link active">INICIO</a></li>
+                    <li class="nav__item"><a href="#tienda" class="nav__link">TIENDA</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav__link">CONTACTO</a></li>
+                </ul>
+            </div>
+
+            <a class='nav__account' id="account"><img src="./assets/img/account.svg"></a>
+            <a href="cart.html" class='nav__cart'id="cart"><img src="./assets/img/grocery.svg"></a>
+            <div class="count__cart" id="countArea"></div> 
+        </nav>
+    </header>
+
+    <!--===== MODAL =====-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Inicio de Sesion</h2>
+            </div>
+            <div class="modal-body">
+                <main class="form-signin">
+                    <form>
+                        <div class="form-floating">
+                            <label for="emailAddress">Dirección de correo</label>
+                            <input type="email" class="form-control" id="emailAddress" placeholder="nombre@mail.com">
+                        </div>
+                        <div class="form-floating">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" placeholder="Contraseña">            
+                        </div>
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox" id="rememberMe" value="remember-me"> Recordarme en este navegador
+                            </label>
+                        </div>
+                        <button class="button" id="btnLogin" type="submit">Iniciar sesión</button>
+                    </form>
+                </main>
+            </div>
+        </div>
+    </div>
+
+    <!--===== HORIZONTAL SCROLL =====-->
+    <div class="outer-wrapper">
+    <div class="wrapper">
+
+    <!--===== HERO =====-->
+    <section class="home slide" id="inicio">
+        <div class="home__container">
+            <div class="home__data">
+                <h1 class="home__title">Vivi la Revolución de las Carerras</h1>
+                <p>Visita nuestra tienda y descubre los ultimos productos que la <b>F1 2022</b> tiene para vos</p>
+                <button href="" class="button home__button" id="iniciarSesion">Iniciar Sesion</button>
+                <h3 class="home__register">¿Todavia no te Registraste?</h3>
+            </div>
+            <img class="f1" src="./assets/img/image1.png" alt="">
+        </div>
+    </section>
+
+    <!--===== ECOMMERCE =====-->
+    <!--===== SHOP NAV =====-->
+    <section class="shop slide" id="tienda">
+        <div class="shop__container">
+            <div class="shop__header">
+                <ul class="shop__list">
+                    <li class="shop__item" id="pilotos"><a href="" class="shop__link">Pilotos</a></li>
+                    <li class="shop__item" id="hombre"><a href="" class="shop__link">Hombre</a></li>
+                    <li class="shop__item" id="mujer"><a href="" class="shop__link">Mujer</a></li>
+                    <li class="shop__item" id="accesorios"><a href="" class="shop__link">Accesorios</a></li>
+                    <li class="shop__item"><a href="" class="shop__link">Comprar por equipo</a></li>
+                    <li class="shop__item">
+                        <button class="shop__team" id="alfaRomeo"><img src="assets/img/alfa-romeo.png" class="shop__icon"></button>
+                        <button class="shop__team" id="alphaTauri"><img src="assets/img/alpha-tauri.png" class="shop__icon"></button>
+                        <button class="shop__team" id="alpine"><img src="assets/img/alpine.png" class="shop__icon"></button>
+                        <button class="shop__team" id="astonMartin"><img src="assets/img/aston-martin.png" class="shop__icon"></button>
+                        <button class="shop__team" id="ferrari"><img src="assets/img/ferrari.png" class="shop__icon"></button>
+                        <button class="shop__team" id="haas"><img src="assets/img/haas.png" class="shop__icon"></button>
+                        <button class="shop__team" id="mclaren"><img src="assets/img/mclaren.png" class="shop__icon"></button>
+                        <button class="shop__team" id="mercedes"><img src="assets/img/mercedes.png" class="shop__icon"></button>
+                        <button class="shop__team" id="redbull"><img src="assets/img/red-bull.png" class="shop__icon"></button>
+                        <button class="shop__team" id="williams"><img src="assets/img/williams.png" class="shop__icon"></button>
+                    </li>
+                </ul>
+            </div>
+    
+            <!--===== SHOP SIDE-BAR =====-->
+            <div class="shop__asside">
+                <div class="asside">
+                <form class="search" action="">
+                    <input type="text" placeholder="Buscar.." name="search" class="search__bar">
+                    <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
+                </form>
+        
+                <div class="shop__filter">
+                    <h2>Marcas</h2>
+                    <ul class="filter__list">
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Formula 1</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Mclaren</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">New Era</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Puma</label>
+                    </ul>
+                    <h2>Categorias</h2>
+                    <ul class="filter__list">
+                        <input type="radio" id="radio"><label for="radio">Gorras</label>
+                        <input type="radio" id="radio"><label for="radio">Buzos</label>
+                        <input type="radio" id="radio"><label for="radio">Remeras</label>
+                        <input type="radio" id="radio"><label for="radio">Chombas</label>
+                    </ul>
+        
+                    <h2>Destacados</h2>
+                    <ul class="filter__list">
+                        <input type="radio" id="radio"><label for="radio">Posters</label>
+                        <input type="radio" id="radio"><label for="radio">F1 a Escala</label>
+                        <input type="radio" id="radio"><label for="radio">Oficina</label>
+                        <input type="radio" id="radio"><label for="radio">Barbijos</label>
+                    </ul>
+                </div>
+                <div class="filter__page">
+                    <h2 class="filter__categorie">Hombre<h2>
+                    <li class="filter__number">1</li>
+                </div>
+            </div>
+            </div>
+
+            <!--===== SHOP PRODUCTS =====-->
+            <div class="shop__main">
+                <div class="shop__card" id="productos"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!--===== CONTACTO =====-->
+    <section class="contact slide" id="contacto">
+        <div class="contact__container">
+            <!--===== FORM =====-->
+            <form class="form">
+                <h1 class="contact__title">CONCTACTO</h1>
+                <div class="form__section">
+                    <input type="texto" class="in" name="nombre" value='Nombre y apellido' required="">
+                </div>
+                <div class="form__section">
+                    <input type="email" class="in" Value="Su correo electronico" required="">
+                </div>
+                <div class="form__section">
+                    <textarea id='output' class=" textarea"rows=20 cols=90>Ingrese su consulta...</textarea>
+                </div>
+                <div class="form__button">
+                    <input class="button" type="submit" value="ENVIAR">
+                </div>
+            </form>
+        </div>
+    </section>
+    </div>
+    </div>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
