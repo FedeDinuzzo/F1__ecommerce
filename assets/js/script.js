@@ -23,29 +23,60 @@ const mclaren = document.getElementById("mclaren");
 const mercedes = document.getElementById("mercedes");
 const redbull = document.getElementById("redbull");
 const williams = document.getElementById("williams");
+const btnLogin = document.getElementById("btnLogin");
 //filtros - se van a modificar los filtros
 
-
-//MODAL
+//jquery MODAL
+$(() => {
 //Abrir Modal
-iniciarSesion.onclick = function() {
-    modal.style.display = "block";
-}
+$('#iniciarSesion').on('click', () => {
+    $('.modal').css({'display': 'block'});
+})
 
-//Cerrar Moda
-closeModal.onclick = function() {
-    modal.style.display = "none";
-}
+//Cerrar Modal
+$('.close').on('click', () => {
+    $('.modal').css({'display': 'none'});
+})
 
 //Cerrar Modal desde cualquier lado de la pantalla
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+$('window').on('click', (event) => {
+    if ($(event.target == modal)){
+    $('.modal').css({'display': 'none'});
+    }})
+})
+
+//HTML LOGIN
+
+
+//HTML INICIAR SESION
+function showIniciarSesion() {
+let div = document.createElement("div");
+        div.innerHTML = 
+    `<main class="form-signin">
+        <form>
+            <div class="form-floating">
+                <label for="emailAddress">Dirección de correo</label>
+                <input type="email" class="form-control" id="emailAddress" placeholder="nombre@mail.com">
+            </div>
+            <div class="form-floating">
+                <label for="password">Contraseña</label>
+                <input type="password" class="form-control" id="password" placeholder="Contraseña">            
+            </div>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" id="rememberMe" value="remember-me"> Recordarme en este navegador
+                </label>
+            </div>
+            <button class="button" id="btnLogin" type="submit">Iniciar sesión</button>
+        </form>
+    </main>`;
+    document.getElementById("modal-body").appendChild(div);
 }
 
+iniciarSesion.addEventListener('click', showIniciarSesion);
 
-//INICIAR SESION
+
+//INICIAR SESION        
 function guardarDatos(storage) {
     let user = document.getElementById('emailAddress').value;
     let pass = document.getElementById('password').value;
