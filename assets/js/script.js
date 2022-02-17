@@ -3,7 +3,7 @@ const iniciarSesion = document.getElementById("iniciarSesion");
 const registrarse = document.getElementById("registrarse");
 const account = document.getElementById("account");
 const modal = document.getElementById("myModal");
-const closeModal = document.getElementsByClassName("close")[0];
+//const closeModal = document.getElementsByClassName("close")[0];
 const cart = document.getElementById("cart");
 const addToCart = document.getElementsByClassName('product__cart');
 const countArea = document.getElementById("countArea");
@@ -39,10 +39,10 @@ $('.close').on('click', () => {
 })
 
 //Cerrar Modal desde cualquier lado de la pantalla
-$('window').on('click', (event) => {
-    if ($(event.target == modal)){
+window.onclick = (e) => {
+    if (e.target == modal){
     $('.modal').css({'display': 'none'});
-    }})
+}}
 })
 
 //HTML LOGIN
