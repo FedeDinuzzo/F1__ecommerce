@@ -121,8 +121,8 @@ button{
   transition: .5s;
 
   &:hover{
-    transform: translateY(-.8rem);
-    background-color: $first-color-alt;
+    transform: translateY(-.4rem);
+    background: $first-color-alt;
   }
 }
 

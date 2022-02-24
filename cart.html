@@ -36,40 +36,22 @@
     <!--===== CART =====-->
     <section class="shop slide" id="tienda">
         <div class="shop__container">
-            <div class="shop__header">
-                <ul class="shop__list">
-                    <li class="shop__item" id="pilotos"><a href="" class="shop__link">Pilotos</a></li>
-                    <li class="shop__item" id="hombre"><a href="" class="shop__link">Hombre</a></li>
-                    <li class="shop__item" id="mujer"><a href="" class="shop__link">Mujer</a></li>
-                    <li class="shop__item" id="accesorios"><a href="" class="shop__link">Accesorios</a></li>
-                    <li class="shop__item"><a href="" class="shop__link">Comprar por equipo</a></li>
-                </ul>
-            </div>
-    
-            <!--===== SHOP SIDE-BAR =====-->
-            <div class="shop__asside">
-                <div class="asside">
-                <form class="search" action="">
-                    <input type="text" placeholder="Buscar.." name="search" class="search__bar">
-                    <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
-                </form>
-        
-                <div class="filter__page">
-                    <h2 class="filter__categorie">Hombre<h2>
-                    <li class="filter__number">1</li>
-                </div>
-            </div>
-            </div>
-
-            <!--===== SHOP PRODUCTS =====-->
             <div class="shop__main">
                 <div class="shop__card" id="productos"></div>
             </div>
         </div>
     </section>
 
+    <section class="cart" id="cart">
+        <div class="cart__container">
+            <div class="cart__main">
+                <div class="cart__card" id="cart_products"></div>
+            </div>
+        </div>
+    </section>
     <!--===== MAIN JS =====-->
     <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/js/cart.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

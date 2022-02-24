@@ -12,25 +12,29 @@
     min-height: 100vh;
   }
   
-  .form{
-    width: 34vw;
-    height: 78vh;
+  .contact-form{
+    min-width: 450px;
+    width: 30%;
+    min-height: 56vh;
+    max-height: 80vh;
     @include desing;
     box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
     text-align: center;
   }
   
   .contact__title{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: $white-color;
     text-align: center;
   }
   
   .form__section{
+    justify-content: center;
     display: flex;
+    flex-wrap: wrap;
     padding: $mb-2 $mb-4;
   }
-    
+
   textarea, .input, .in{
     font-family: 'roboto';
     font-size: $h2-font-size;
@@ -38,14 +42,75 @@
     color: $white-color;
     padding: $mb-2;
     margin: 0 $mb-4;
-    border-radius: 20px;
+    border-radius: 18px;
     border: none;
     resize: none;
-    max-height: 250px;
+    max-height: 200px;
     width: 100%;
   }
-  
+      
   .button{
     font-family: 'Open Sans';
-    margin-top: $mb-2;
+    margin: $mb-2 0 $mb-2 0;
+  }
+
+  .contact-form-loader{
+    width: 100%;
+  }
+
+  .loader{
+    padding: $mb-1;
+    width: 70px;
+    height: 70px;
+  }
+
+  .form__submitted{
+    font-family: 'Open Sans';
+    padding: $mb-1 $mb-2;
+    background-color: rgb(145, 238, 7);
+    font-size: $h2-font-size;
+    border-radius: 18px;
+  }
+
+  .contact-form ::placeholder{
+    color: $white-color;
+  }
+
+  .contact-form [required]:valid{
+    border: 2px solid greenyellow;
+  }
+
+  .contact-form [required]:invalid{
+    border: 2px solid red;
+  }
+
+  .contact-form-error{
+    font-size: 80%;
+    background-color: red;
+    color: $white-color;
+    transition: all 600ms ease;
+    padding: $mb-1;
+    border-radius: 0 0 20px 20px;
+    width: 100%;
+    margin: -1rem $mb-4 0 $mb-4;
+  }
+
+  .contact-form-error.is-active{
+    display: block;
+    animation: show__message 1s 1 normal 0s ease-out both;
+  }
+
+  .none{
+    display: none;
+  }
+
+  @keyframes show__message {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
   }

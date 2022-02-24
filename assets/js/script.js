@@ -26,8 +26,18 @@ const williams = document.getElementById("williams");
 const btnLogin = document.getElementById("btnLogin");
 //filtros - se van a modificar los filtros
 
-//jquery MODAL
+
+
+
+
 $(() => {
+//Animacion Imagen Inicio
+$('.hide').show(3000)
+.delay(3000)
+.fadeOut(3000);
+
+//jquery MODAL
+
 //Abrir Modal
 $('#iniciarSesion').on('click', () => {
     $('.modal').css({'display': 'block'});
@@ -43,6 +53,7 @@ window.onclick = (e) => {
     if (e.target == modal){
     $('.modal').css({'display': 'none'});
 }}
+
 })
 
 //HTML LOGIN
@@ -52,8 +63,7 @@ window.onclick = (e) => {
 function showIniciarSesion() {
 let div = document.createElement("div");
         div.innerHTML = 
-    `<main class="form-signin">
-        <form>
+    `<form>
             <div class="form-floating">
                 <label for="emailAddress">Dirección de correo</label>
                 <input type="email" class="form-control" id="emailAddress" placeholder="nombre@mail.com">
@@ -68,8 +78,7 @@ let div = document.createElement("div");
                 </label>
             </div>
             <button class="button" id="btnLogin" type="submit">Iniciar sesión</button>
-        </form>
-    </main>`;
+        </form>`;
     document.getElementById("modal-body").appendChild(div);
 }
 
@@ -95,32 +104,28 @@ function guardarDatos(storage) {
 
 function borrarDatos(storage) {
     storage.clear();
-
 }
 
 let recordar = document.getElementById("rememberMe");
 
-btnLogin.addEventListener("click", () => {
+/*btnLogin.addEventListener("click", () => {
     if (recordar.checked) {
         guardarDatos("localStorage");
     } else {
         guardarDatos("sessionStorage");
     }
-});
+});*/
 
 //ARRAY PRODUCTOS
 class Producto {
-    constructor(type, team, edition, price, img, code) {
+    constructor(type, team, edition, price, img, code, category) {
         this.type = type;
         this.team = team;
         this.edition = edition;
         this.price = price;
         this.img = img;
         this.code = code;
-    }
-
-    mostrarProducto() {
-        alert("El producto correspondiente al codigo ingresado es:" + "\n" + "Producto: " + this.type + " " + this.team + "\n" + "edicion: " + this.edition + "\n" + "Precio: $" + this.price);
+        this.category = category;
     }
 }
 
@@ -138,7 +143,6 @@ productos.push(new Producto("T-Shirt", "Red Bull Racing", "2021 Max Verstappen W
 
 //MOSTRAR PRODUCTOS
 function showProducts (element){
-
     for (const producto of element) {
         let div = document.createElement("div");
         div.innerHTML = `<div class="product__card">
@@ -149,6 +153,7 @@ function showProducts (element){
         document.getElementById("productos").appendChild(div);
     }
 }
+
 
 //UNIDADES SELECCIONADAS CARRITO
 let count = localStorage.getItem('cartNumber');
@@ -172,6 +177,7 @@ if (count > 0) {
 
 
 //MOSTRAR PRODUCTOS POR EQUIPOS
+
 function showAlfaRomeo() {
     let encontrar = productos.filter(element => element.team === "Alfa Romeo");
     showProducts(encontrar);
@@ -229,118 +235,92 @@ redbull.addEventListener('click', showRedbull);
 
 
 function showWilliams() {
-    let encontrar = productos.filter(element => element.team === "Williams Racing"); 
+    let encontrar = productos.filter(element => element.team === williams); 
     showProducts(encontrar);
 }
 williams.addEventListener('click', showWilliams);
 
 
-//SHOW PRODUCTS BY FILTER
-
-/*
-//REGISTRO: simula el ingreso de datos para crearse una cuenta
-let nombre = prompt("Ingrese su nombre");
-let apellido = prompt("Ingrese su apellido");
-let email = prompt("Ingrese su email");
-let contraseña = prompt("Elija una constraseña de al menos 6 caracteres");
-
-alert("Bienvenido " +nombre +" tu registro se ha completado existosamente!");
-*/
+//FORMULARIO DE CONTACTO AJAX Jquery - formsubmit API
+/*const URLGET = "https://jsonplaceholder.typicode.com/posts"
+const nombreCompleto = document.getElementById('nombreCompleto').value;
+const email = document.getElementById('email').value;
+const consulta = document.getElementById('consulta').value;
 
 
-/*
-//INICIO SESION: simula el ingreso de datos para iniciar sesion
-prompt("Ingrese su email");
-prompt("ingrese su constraseña");
+$("#formSubmit").click(() => {
+    const formulario = {
+        'name': nombreCompleto,
+        'email': email,
+        'consulta': consulta
+    }
 
-alert("Incio de sesion exitoso");
-*/
+    $.post(URLGET, formulario,(respuesta, estado) => {
+    if(estado === "success") {
+        $(".form__button").prepend(
+        `<div>
+        ${respuesta.nombreCompleto} El formulario ha sido enviado con Exito
+        </div>`);
+    }
+});
+});*/
 
+function contactForm(){
+const $form = document.querySelector(".contact-form"),
+$inputs = document.querySelectorAll(".contact-form [required]");
 
-/*
-//CATEGORIA PRODUCTO: simula mostrar los productos por su categoria
-let tipoProducto = prompt("Ingrese el tipo de producto: ");
+$inputs.forEach(input => {
+    const $span = document.createElement("span");
+    $span.id = input.name;
+    $span.textContent = input.title;
+    $span.classList.add("contact-form-error", "none")
+    input.insertAdjacentElement("afterend", $span);
+});
 
-const encontrar = productos.filter(element => element.type == tipoProducto);
+document.addEventListener("keyup", (e) => {
+    if (e.target.matches(".contact-form [required]")){
+        let $input = e.target,
+        pattern = $input.pattern || $input.dataset.pattern;
+    
+        if(pattern && $input.value !== ""){
+            let regex = new RegExp(pattern);
+            return !regex.exec($input.value)
+                ? document.getElementById($input.name).classList.add("is-active")
+                : document.getElementById($input.name).classList.remove("is-active")
+        }
+    }
+});
 
-console.log(encontrar);
-*/
+document.addEventListener("submit", (e) => {
+    e.preventDefault();
 
+    const $loader = document.querySelector(".contact-form-loader"),
+    $response = document.querySelector(".contact-form-response");
 
-/*
-//FILTRAR PRODUCTOS: simula un filtro de precio de menor a mayor
-console.log(productos.sort((precio1, precio2) => precio1.price - precio2.price));
-*/
+    $loader.classList.remove("none");
 
-
-/*
-//ADD TO CART: simula que cuando aprietes el boton de agregar al carrito en el producto, este sea llevado por su codigo y aparezca en carrito.
-const codigoProducto = Number(prompt("Ingrese el codigo del producto para agregarlo al carrito: "));
-const encontrar = productos.find(element => element.code == codigoProducto);
-encontrar.mostrarProducto() 
-*/
-
-
-/*
-//VER CARRITO: siumula que cuando abras el carrito desde la nav bar aparezcan los productos que agregaste
-const cantidadProductos = Number(prompt("Ingrese la cantidad de productos que tiene en el carrito: "));
-
-if (cantidadProductos == 1) {
-    alert("Ingrese el codigo del producto que tenes en el carrito: ");
-}else{
-alert("Ingrese el codigo de los "+ cantidadProductos +" productos que tenes en el carrito: ");
+    fetch("https://formsubmit.co/ajax/federicodinuzzo98@gmail.com",{
+        method: "POST",
+        body: new FormData(e.target)
+    })
+        .then(res => res.ok?res.json():Promise.reject(res))
+        .then(json => {
+            console.log(json);
+            $loader.classList.add("none");
+            $response.classList.remove("none");
+            $response.innerHTML = `<p class="form__submitted">${json.message}</p>`;
+            $form.reset();
+        })
+        .catch(err => {
+            console.log(err);
+            let message = err.statusText || "Ocurrio un error al enviar, intenta nuevamente";
+            $response.innerHTML = `<p>Error ${err.status}: ${message}</p>`;
+        })
+        .finally(() => setTimeout(() => {
+            $response.classList.add("none");
+            $response.innerHTML = "";
+        },3000));
+});
 }
 
-const codigos = [];
-
-for (let i = 0; i < cantidadProductos; i++) {
-    codigos.push(Number(prompt("Ingrese codigo del producto: ")));
-}
-
-alert("los prodcutos del carrito son: "+codigos);
-*/
-
-
-/*
-//PRECIO SUBTOTAL DEL CARRITO: simula calcular el precio subtotal de los productos que estan dentro del carrito.
-const precioProductos = Number(prompt("Ingrese la cantidad de productos que tiene en el carrito: "));
-
-if (precioProductos == 1) {
-    alert("Ingrese el precio del producto que tenes en el carrito: ");
-}else{
-alert("Ingrese los precios de los "+ precioProductos +" productos que tenes en el carrito: ");
-}
-
-const precio = [], suma = 0;
-
-for (let i = 0; i < precioProductos; i++) {
-    precio.push(Number(prompt("Ingrese el precio del producto: ")));
-}
-
-let subtotal = precio.reduce((a, b) => a + b, 0);
-
-alert("SUBTOTAL: $"+subtotal);
-
-//PASARELA DE PAGOS: simula calcular el precio final segun la forma de pago
-let medioPago = prompt("Ingrese medio de pago (credito, debito, efectivo): ");
-
-const precioFinal =(num) => alert("El monto final a pagar es: "+ (subtotal*num));
-
-if (medioPago === "credito") {
-    precioFinal(1.15);
-}else if (medioPago === "debito"){
-    precioFinal(1.05);
-}else if (medioPago === "efectivo"){
-    precioFinal(0.9);
-}
-*/
-
-
-/*FORMULARIO DE CONTACTO
-let nombreCompletoContacto = prompt("Ingrese su nombre y apellido");
-let emailContacto = prompt("Ingrese su email");
-let consulta = prompt("Ingrese su consulta");
-
-alert("Su consulta ha sido enviada con existo, dentro de las proximas 48hs habiles le contestaremos a su email, Gracias!");
-//simula el ingreso de datos para enviar el formulario
-*/
+document.addEventListener("DOMContentLoaded", contactForm);

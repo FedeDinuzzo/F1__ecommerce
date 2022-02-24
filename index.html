@@ -58,7 +58,7 @@
                 <button href="" class="button home__button" id="iniciarSesion">Iniciar Sesion</button>
                 <h3 class="home__register">¿Todavia no te Registraste?</h3>
             </div>
-            <img class="f1" src="./assets/img/image1.png" alt="">
+            <img class="f1 hide" src="./assets/img/image1.png" alt="">
         </div>
     </section>
 
@@ -138,21 +138,24 @@
     <section class="contact slide" id="contacto">
         <div class="contact__container">
             <!--===== FORM =====-->
-            <form class="form">
-                <h1 class="contact__title">CONCTACTO</h1>
+            <form class="contact-form">
+                <h1 class="contact__title">CONTACTO</h1>
                 <div class="form__section">
-                    <input type="texto" class="in" name="nombre" value='Nombre y apellido' required="">
+                    <input type="texto" class="in" name="nombre" placeholder='Nombre y apellido' title="Solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÜü\s]+$" required>
                 </div>
                 <div class="form__section">
-                    <input type="email" class="in" Value="Su correo electronico" required="">
+                    <input type="email" class="in" name="email" placeholder="Escribe tu email" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
                 </div>
                 <div class="form__section">
-                    <textarea id='output' class=" textarea"rows=20 cols=90>Ingrese su consulta...</textarea>
-                </div>
-                <div class="form__button">
+                    <textarea class="textarea" name="comments" rows=20 cols=90 placeholder="Ingrese su consulta..." title="No exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
+                <div class="form__section">
                     <input class="button" type="submit" value="ENVIAR">
                 </div>
-            </form>
+                <div class="contact-form-loader none">
+                    <img class="loader" src="./assets/img/loader.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response none"></div>
+        </form>
         </div>
     </section>
     </div>

@@ -1,0 +1,20 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass --include-path scss scss/estilo.scss css/style.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+  },
+  "author": "Flor Hnatiuk",
+  "license": "ISC",
+  "devDependencies": {
+    "node": "^17.3.0",
+    "node-sass": "^7.0.0"
+  },
+  "dependencies": {
+    "sass": "^1.45.1"
+  }
+}
