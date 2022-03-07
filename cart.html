@@ -11,44 +11,35 @@
     <!-- ===== BOXICONS ===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body onload="renderCart()">
     <!--===== HEADER =====-->
     <header class="header">
-        <nav class="nav grid">
-            <div>
-                <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
-            </div>
+        <nav class="nav">
+            <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
 
-            <div class="nav__menu" id="nav__menu">
+            <div class="nav__link">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html#inicio" class="nav__link active">INICIO</a></li>
-                    <li class="nav__item"><a href="index.html#tienda" class="nav__link">TIENDA</a></li>
-                    <li class="nav__item"><a href="index.html #contacto" class="nav__link">CONTACTO</a></li>
+                    <li class="nav__item"><a href="index.html#inicio" class="nav-link">INICIO</a></li>
+                    <li class="nav__item"><a href="index.html#tienda" class="nav-link">TIENDA</a></li>
+                    <li class="nav__item"><a href="index.html#contacto" class="nav-link">CONTACTO</a></li>    
+					<li class="nav__item"><a class="logout" onclick="logout()" id="logoutButton"><img class="nav__img" src="./assets/img/logout.svg"></a></li>
                 </ul>
             </div>
-
-            <a class='nav__account' id="account"><img src="./assets/img/account.svg"></a>
-            <a class='nav__cart' id="cart"><img src="./assets/img/grocery.svg"></a>
-            <div class="count__cart" id="countArea"></div> 
         </nav>
     </header>
 
     <!--===== CART =====-->
-    <section class="shop slide" id="tienda">
-        <div class="shop__container">
-            <div class="shop__main">
-                <div class="shop__card" id="productos"></div>
+    <section class="cart">	
+		<div class="cart__container">
+            <h1 class="cart__title">Productos Seleccionados</h1>
+			<div class="cart__items" id="product-container"></div>
+            <div class="cart__bottom">
+                <a class="button cart__btn" href="./index.html">Seguir Comprando</a>
+                <a class="button cart__btn" href="/checkout/checkout.html">Proceder al Pago</a>
             </div>
-        </div>
-    </section>
+		</div>	
+	</section>
 
-    <section class="cart" id="cart">
-        <div class="cart__container">
-            <div class="cart__main">
-                <div class="cart__card" id="cart_products"></div>
-            </div>
-        </div>
-    </section>
     <!--===== MAIN JS =====-->
     <script src="assets/jquery-3.6.0.js"></script>
     <script src="assets/js/cart.js"></script>

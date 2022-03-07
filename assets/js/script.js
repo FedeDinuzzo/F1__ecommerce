@@ -1,45 +1,16 @@
-//VARIABLES
-const iniciarSesion = document.getElementById("iniciarSesion");
-const registrarse = document.getElementById("registrarse");
-const account = document.getElementById("account");
+//Variables
+let CART = "";
+let PATH = 'assets/js/products.json';
 const modal = document.getElementById("myModal");
-//const closeModal = document.getElementsByClassName("close")[0];
-const cart = document.getElementById("cart");
-const addToCart = document.getElementsByClassName('product__cart');
-const countArea = document.getElementById("countArea");
-//categorias
-const pilotos = document.getElementById("pilotos");
-const hombre = document.getElementById("hombre");
-const mujer = document.getElementById("mujer");
-const accesorios = document.getElementById("accesorios");
-//equipos
-const alfaRomeo = document.getElementById("alfaRomeo");
-const alphaTauri = document.getElementById("alphatauri");
-const alpine = document.getElementById("alpine");
-const astonMartin = document.getElementById("astonMartin");
-const ferrari = document.getElementById("ferrari");
-const haas = document.getElementById("haas");
-const mclaren = document.getElementById("mclaren");
-const mercedes = document.getElementById("mercedes");
-const redbull = document.getElementById("redbull");
-const williams = document.getElementById("williams");
-const btnLogin = document.getElementById("btnLogin");
-//filtros - se van a modificar los filtros
-
-
-
+const modalBody = document.getElementById("modal-body");
+const iniciarSesion = document.getElementById("iniciarSesion");
+const registro = document.getElementById("registro");
+const contactFormSubmitted = document.getElementById('form');
 
 
 $(() => {
-//Animacion Imagen Inicio
-$('.hide').show(3000)
-.delay(3000)
-.fadeOut(3000);
-
-//jquery MODAL
-
 //Abrir Modal
-$('#iniciarSesion').on('click', () => {
+$('#iniciarSesion, #loginButton, #registro').on('click', () => {
     $('.modal').css({'display': 'block'});
 })
 
@@ -53,218 +24,235 @@ window.onclick = (e) => {
     if (e.target == modal){
     $('.modal').css({'display': 'none'});
 }}
-
 })
 
-//HTML LOGIN
+
+//Registro
+function showRegistro() {
+    let div = document.createElement("div");
+            div.innerHTML = 
+    `<form action="javascript:register()" class="form-container">
+			<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Nombre" required/>
+			<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Apellido" required/>
+			<input class="form-control" type="email" name="email" id="email" placeholder="Correo electronico" required/>
+			<input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required/>
+			<button type="submit" class="button modal__button">Crear cuenta</button>
+	</form>`
+    modalBody.appendChild(div);
+
+    function removeR() {
+        modalBody.removeChild(div);
+    }
+
+    registro.addEventListener('click', removeR);  
+}
+
+registro.addEventListener('click', showRegistro);
 
 
-//HTML INICIAR SESION
+//Iniciar Sesion
 function showIniciarSesion() {
 let div = document.createElement("div");
         div.innerHTML = 
-    `<form>
+
+		`<form action="javascript:login()">
             <div class="form-floating">
-                <label for="emailAddress">Dirección de correo</label>
-                <input type="email" class="form-control" id="emailAddress" placeholder="nombre@mail.com">
+				<input class="form-control" type="email" name="loginEmail" id="loginEmail" placeholder="Correo electronico" required />
             </div>
             <div class="form-floating">
-                <label for="password">Contraseña</label>
-                <input type="password" class="form-control" id="password" placeholder="Contraseña">            
-            </div>
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" id="rememberMe" value="remember-me"> Recordarme en este navegador
-                </label>
-            </div>
-            <button class="button" id="btnLogin" type="submit">Iniciar sesión</button>
-        </form>`;
-    document.getElementById("modal-body").appendChild(div);
+				<input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="Constraseña" required />
+            </div>	
+                <button type="submit" class="button modal__button">Iniciar sesión</button>
+				
+		</form>`;
+
+        modalBody.appendChild(div);
+
+    function remove() {
+        modalBody.removeChild(div);
+    }
+
+    iniciarSesion.addEventListener('click', remove);  
 }
 
 iniciarSesion.addEventListener('click', showIniciarSesion);
 
 
-//INICIAR SESION        
-function guardarDatos(storage) {
-    let user = document.getElementById('emailAddress').value;
-    let pass = document.getElementById('password').value;
-    const usuario = {
-        'user': user,
-        'pass': pass
-    };
-
-    if (storage === "sessionStorage") {
-        sessionStorage.setItem("user", JSON.stringify(usuario));
-    }
-    if (storage === "localStorage") {
-        localStorage.setItem("user", JSON.stringify(usuario));
-    }
-}
-
-function borrarDatos(storage) {
-    storage.clear();
-}
-
-let recordar = document.getElementById("rememberMe");
-
-/*btnLogin.addEventListener("click", () => {
-    if (recordar.checked) {
-        guardarDatos("localStorage");
-    } else {
-        guardarDatos("sessionStorage");
-    }
-});*/
-
-//ARRAY PRODUCTOS
-class Producto {
-    constructor(type, team, edition, price, img, code, category) {
-        this.type = type;
-        this.team = team;
-        this.edition = edition;
-        this.price = price;
-        this.img = img;
-        this.code = code;
-        this.category = category;
-    }
-}
-
-const productos = [];
-
-productos.push(new Producto("Hoodie", "Mercedes Benz", "Chinese New Year Special Edition", 101, "assets/img/Products Preview/1.png", 001));
-productos.push(new Producto("T-Shirt", "Red Bull Racing", "2021 Special Edition Mexico GP", 42, "assets/img/Products Preview/2.png", 002));
-productos.push(new Producto("Polo", "Aston Martin", "F1 2021 Official Team Polo", 35, "assets/img/Products Preview/3.png", 003));
-productos.push(new Producto("Polo", "Williams Racing", "2021 - Navy", 90, "assets/img/Products Preview/4.png", 004));
-productos.push(new Producto("Jacket", "Mercedes Benz", "Performance", 180, "assets/img/Products Preview/5.png", 005));
-productos.push(new Producto("Polo", "Mercedes Benz", "F1 2021 - Black", 85, "assets/img/Products Preview/6.png", 006));
-productos.push(new Producto("Hoodie", "Mclaren", "Essential Logo - Grey", 210, "assets/img/Products Preview/7.png", 007));
-productos.push(new Producto("T-Shirt", "Red Bull Racing", "2021 Max Verstappen World Champion", 72, "assets/img/Products Preview/8.png", 008));
+//Verificación de usuario
+function getUser() {
+	if(sessionStorage.getItem('isAuthenticated')) {
+		//Contador del carrito
+		let count = 0;
+		let currUserId = sessionStorage.getItem('currUserId');
+		let currentUserCartKey = 'cart_' + currUserId;
+		count = JSON.parse(localStorage.getItem(currentUserCartKey || "[]")).length;
+		document.getElementById('basket').innerHTML = count;
+		document.getElementById('loginButton').style.display = 'none';
+		document.getElementById('cartButton').innerHTML = '<img class="nav__img" src="./assets/img/grocery.svg">';
+	} else {
+		document.getElementById('cartButton').innerHTML = '<img class="nav__img" src="./assets/img/grocery.svg">';
+		document.getElementById('logoutButton').style.display = 'none';
+		document.getElementById('basket-container').style.display = 'none';
+		loadJSON(PATH);
+	};
+	//Traer todos los productos a la Pagina Princiapl
+	getAll();
+} 
 
 
-//MOSTRAR PRODUCTOS
-function showProducts (element){
-    for (const producto of element) {
-        let div = document.createElement("div");
-        div.innerHTML = `<div class="product__card">
-                         <button class="product__cart"><img src="assets/img/grocery.svg"></button>
-                         <img src="${producto.img}" class="img__card">
-                         <h3 class="product__name">${producto.type} / ${producto.team}</h3>
-                         <h3 class="product__price">$${producto.price}</h3></div>`;
-        document.getElementById("productos").appendChild(div);
-    }
+//Obtención de datos (products.json), y guardado en LocalStorage
+function loadJSON(PATH) {
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = () => {
+		if(xhr.readyState === XMLHttpRequest.DONE) {
+			if (xhr.status === 200) {
+				let data = JSON.parse(xhr.responseText);
+				localStorage.setItem('products', JSON.stringify(data));
+			} else {
+				window.alert('Algo salió mal al Buscar!');
+			}
+		}
+	};
+	xhr.open('GET', PATH, true);
+	xhr.send();
 }
 
 
-//UNIDADES SELECCIONADAS CARRITO
-let count = localStorage.getItem('cartNumber');
-let productsCart = addToCart.length;
-
-for (var i = 0; i < productsCart; i++) {
-    addToCart[i].onclick = function () {
-    count++
-    localStorage.setItem('cartNumber', countArea.textContent = count);
-    }
-}
-
-if (count > 0) {
-    countArea.textContent = count;
+//Ingresar a pagina cart
+function getCart() {
+	if(sessionStorage.getItem('isAuthenticated')) {
+		window.location = '../cart.html'
+	} else {
+		alert("Debes Iniciar Sesion para utilizar el Carrito");
+		window.location = './index.html';
+	}
 }
 
 
-//PRODUCTS TO CART
-
-
-
-
-//MOSTRAR PRODUCTOS POR EQUIPOS
-
-function showAlfaRomeo() {
-    let encontrar = productos.filter(element => element.team === "Alfa Romeo");
-    showProducts(encontrar);
+//Mostrar productos por categorias
+function getAll() {
+	renderProducts();
 }
-alfaRomeo.addEventListener('click', showAlfaRomeo);
 
-
-function showAlpine() {
-    let encontrar = productos.filter(element => element.team === "Alpine"); 
-    showProducts(encontrar);
+function getMobiles() {
+	renderProducts('Polo');
 }
-alpine.addEventListener('click', showAlpine);
 
-
-function showAstonMartin() {
-    let encontrar = productos.filter(element => element.team === "Aston Martin"); 
-    showProducts(encontrar);
+function getLaptops() {
+	renderProducts('Hoodie');
 }
-astonMartin.addEventListener('click', showAstonMartin);
 
-
-function showFerrari() {
-    let encontrar = productos.filter(element => element.team === "Ferrari"); 
-    showProducts(encontrar);
+//Mostrar productos por equipos
+function getAlfaRomeo() {
+	renderProducts('Alfa Romeo');
 }
-ferrari.addEventListener('click', showFerrari);
 
-
-function showHaas() {
-    let encontrar = productos.filter(element => element.team === "Haas"); 
-    showProducts(encontrar);
+function getAlphaTauri() {
+	renderProducts('Alpha Tauri');
 }
-haas.addEventListener('click', showHaas);
 
-
-function showMlcaren() {
-    let encontrar = productos.filter(element => element.team === "Mclaren"); 
-    showProducts(encontrar);
+function getgetAlpine() {
+	renderProducts('Alpine');
 }
-mclaren.addEventListener('click', showMlcaren);
 
-
-function showMercedes() {
-    let encontrar = productos.filter(element => element.team === "Mercedes Benz"); 
-    showProducts(encontrar);
+function getAstonMartin() {
+	renderProducts('Aston Martin');
 }
-mercedes.addEventListener('click', showMercedes);
 
-
-function showRedbull() {
-    let encontrar = productos.filter(element => element.team === "Red Bull Racing"); 
-    showProducts(encontrar);
+function getFerrari() {
+	renderProducts('Ferrari');
 }
-redbull.addEventListener('click', showRedbull);
 
-
-function showWilliams() {
-    let encontrar = productos.filter(element => element.team === williams); 
-    showProducts(encontrar);
+function getHaas() {
+	renderProducts('Haas');
 }
-williams.addEventListener('click', showWilliams);
+
+function getMclaren() {
+	renderProducts('Mclaren');
+}
+
+function getMercedes() {
+	renderProducts('Mercedes Benz');
+}
+
+function getRedbull() {
+	renderProducts('Red Bull');
+}
+
+function getWilliams() {
+	renderProducts('Williams Racing');
+}
 
 
-//FORMULARIO DE CONTACTO AJAX Jquery - formsubmit API
-/*const URLGET = "https://jsonplaceholder.typicode.com/posts"
-const nombreCompleto = document.getElementById('nombreCompleto').value;
-const email = document.getElementById('email').value;
-const consulta = document.getElementById('consulta').value;
+//Eenderizar productos basados ​​en las categorías dadas
+function renderProducts(filter) {
+	let productContainer = document.getElementById('product-container');
+	productContainer.innerHTML = "";
+	let data = JSON.parse(localStorage.getItem('products'));
+	data.forEach(item => {
+		if(filter) {
+			if(item.category === filter) {
+				productContainer.innerHTML += `
+				<div class="product__card">
+					<form action="javascript:addToCart('${item.id}')" class="cart-btn">
+						<button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
+					</form>	
+					<img src="${item.imageURL}" class="img__card">
+					<h3 class="product__name">${item.category} / ${item.team}</h3>
+					<h3 class="product__price">$${item.price}</h3></div>
+				</div>`;
+			} if(item.team === filter) {
+				productContainer.innerHTML += `
+				<div class="product__card">
+					<form action="javascript:addToCart('${item.id}')" class="cart-btn">
+						<button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
+					</form>	
+					<img src="${item.imageURL}" class="img__card">
+					<h3 class="product__name">${item.category} / ${item.team}</h3>
+					<h3 class="product__price">$${item.price}</h3></div>
+				</div>`;
+			}  
+		} else {
+			productContainer.innerHTML += `
+			<div class="product__card">
+			    <form action="javascript:addToCart('${item.id}')" class="cart-btn">
+                    <button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
+				</form>	
+                <img src="${item.imageURL}" class="img__card">
+                <h3 class="product__name">${item.category} / ${item.team}</h3>
+                <h3 class="product__price">$${item.price}</h3></div>
+			</div>`;
+		} 
+	});
+}
 
 
-$("#formSubmit").click(() => {
-    const formulario = {
-        'name': nombreCompleto,
-        'email': email,
-        'consulta': consulta
-    }
+//Agregar el artículo con el id del producto al carrito del usuario actual
+function addToCart(prodId) {
+	if(sessionStorage.getItem('isAuthenticated')) {
+		let currUserId = sessionStorage.getItem('currUserId');
+		let currentUserCartKey = 'cart_' + currUserId;
+		CART = JSON.parse(localStorage.getItem(currentUserCartKey || "[]"));
+		let isAlreadyInCart = CART.some(item => item.id === prodId);
+		if(isAlreadyInCart) {
+			CART.forEach(item => {
+				if(item.id === prodId) {
+					item.count++;
+				}
+			})
+		} else {
+			CART.push({"id":prodId,"count":1});
+		}
+		localStorage.setItem(currentUserCartKey, JSON.stringify(CART));
+		window.location.reload();
+		window.location.href="index.html #tienda".reload();
+	} else {
+		window.alert("Primero debes Iniciar Sesion.")
+	}
+}
 
-    $.post(URLGET, formulario,(respuesta, estado) => {
-    if(estado === "success") {
-        $(".form__button").prepend(
-        `<div>
-        ${respuesta.nombreCompleto} El formulario ha sido enviado con Exito
-        </div>`);
-    }
-});
-});*/
 
+//Formulario de contacto - formsubmit API
 function contactForm(){
 const $form = document.querySelector(".contact-form"),
 $inputs = document.querySelectorAll(".contact-form [required]");
@@ -291,7 +279,7 @@ document.addEventListener("keyup", (e) => {
     }
 });
 
-document.addEventListener("submit", (e) => {
+contactFormSubmitted.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const $loader = document.querySelector(".contact-form-loader"),
@@ -324,3 +312,10 @@ document.addEventListener("submit", (e) => {
 }
 
 document.addEventListener("DOMContentLoaded", contactForm);
+
+
+//Cerrar sesión
+function logout() {
+	sessionStorage.clear();
+	window.location = '../../index.html'
+}

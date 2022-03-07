@@ -1,6 +1,3 @@
-.hide{
-    display: none;
-}
 
 .modal {
     display: none; /* Hidden by default */
@@ -67,23 +64,27 @@
   /* The Close Button */
 .close {
     color: white;
-    float: right;
+    position: absolute;
+    top: $mb-1;
+    right: $mb-2;
     font-size: 28px;
     font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-    color: #000;
+    color: $first-color;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-header {
-    border-radius: 28px;
+.modal-body {
     padding: 2px 16px;
-    background: linear-gradient(113deg, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0.2) 56%);
-    color: white;
 }
 
-.modal-body {padding: 2px 16px;}
+.modal__button{
+    
+
+    width: 220px;
+    height: 60px;
+}

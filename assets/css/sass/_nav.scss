@@ -7,20 +7,8 @@
     margin-right: $mb-4;
   }
 
-  .nav__menu{
-    margin-left: auto;
-  }
-
-  .nav__list{
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .nav__item{
-    margin: 0 $mb-2;
-  }
-  
   .nav__link{
+    margin-left: auto;
     color: $white-color;
     font-size: $h2-font-size;
 
@@ -28,21 +16,33 @@
       color: $first-color-alt;
     }
   }
+
+  .nav__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__item{
+    display: flex;
+    flex-shrink: 0;
+    margin: 0 $mb-2;
+  }
   
   .nav__logo{
     height: 2.5rem;
     margin-left: $mb-4;
   }
-  
-  .nav__account{
-    margin: 0 $mb-1;
+
+  .nav__img:hover{
+    transform: scale(1.1);
   }
 
-  .main__cart{
-    margin-right: $mb-2;
-    display: flex;
+  .nav__icon{
+    margin-left: $mb-2;
   }
 
-  .count__cart{
-    margin-bottom: $mb-3;
+  .basket{
+    font-family: 'roboto';
+    font-size: 18px;
   }

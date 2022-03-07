@@ -27,6 +27,7 @@
   -ms-overflow-style: none;
   scroll-behavior: smooth;
 }
+
 ::-webkit-scrollbar{
   display: none;
 }
@@ -86,11 +87,7 @@ ul{
   
 a{
   text-decoration: none;
-  color: $first-color;
-  &:hover{
-    text-decoration: none;
-    color: $white-color;
-  }
+  color: $white-color;
 }
 
 img{
