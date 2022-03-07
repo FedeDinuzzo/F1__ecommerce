@@ -1,0 +1,90 @@
+[
+	{
+		"id": "001",
+        "category": "Hoodie",
+        "team": "Mercedes Benz",
+		"name": "Chinese New Year Special Edition",
+		"price": "101",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/one.png?raw=true"
+	},
+	{
+		"id": "002",
+        "category": "T-Shirt",
+        "team": "Red Bull",
+		"name": "2021 Special Edition Mexico GP",
+		"price": "43",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/2.png?raw=true"
+	},
+	{
+		"id": "003",
+        "category": "Polo",
+        "team": "Aston Martin",
+		"name": "F1 2021 Official Team",
+		"price": "35",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/3.png?raw=true"
+	},
+	{
+		"id": "004",
+        "category": "Polo",
+        "team": "Williams Racing",
+		"name": "2021 - Navy",
+		"price": "90",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/4.png?raw=true"	
+	},
+    {
+		"id": "005",
+        "category": "Jacket",
+        "team": "Mercedes Benz",
+		"name": "Performance",
+		"price": "180",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/5.png?raw=true"
+	},
+	{
+		"id": "006",
+        "category": "Polo",
+        "team": "Mercedes Benz",
+		"name": "F1 2021 - Black",
+		"price": "85",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/6.png?raw=true"	
+	},
+	{
+		"id": "007",
+        "category": "Hoodie",
+        "team": "Mclaren",
+		"name": "Essential Logo - Grey",
+		"price": "210",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+	},
+	{
+		"id": "008",
+        "category": "T-Shirt",
+        "team": "Red Bull",
+		"name": "2021 Max Verstappen World Champion",
+		"price": "72",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/8.png?raw=true"	
+	},
+	{
+		"id": "010",
+        "category": "hoodie",
+        "team": "Mclaren",
+		"name": "Essential Logo - Grey",
+		"price": "210",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+	},
+	{
+		"id": "011",
+        "category": "hoodie",
+        "team": "Mclaren",
+		"name": "Essential Logo - Grey",
+		"price": "210",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+	},
+	{
+		"id": "012",
+        "category": "hoodie",
+        "team": "Mclaren",
+		"name": "Essential Logo - Grey",
+		"price": "210",
+		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+	}
+]

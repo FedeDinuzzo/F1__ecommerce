@@ -1,0 +1,48 @@
+/*===== NAV =====*/
+.nav{
+    height: $header-height;
+    display: flex;
+    justify-content: initial;
+    align-items: center;
+    margin-right: $mb-4;
+  }
+
+  .nav__link{
+    margin-left: auto;
+    color: $white-color;
+    font-size: $h2-font-size;
+
+    &:hover{
+      color: $first-color-alt;
+    }
+  }
+
+  .nav__list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__item{
+    display: flex;
+    flex-shrink: 0;
+    margin: 0 $mb-2;
+  }
+  
+  .nav__logo{
+    height: 2.5rem;
+    margin-left: $mb-4;
+  }
+
+  .nav__img:hover{
+    transform: scale(1.1);
+  }
+
+  .nav__icon{
+    margin-left: $mb-2;
+  }
+
+  .basket{
+    font-family: 'roboto';
+    font-size: 18px;
+  }

@@ -1,0 +1,140 @@
+.cart{
+	min-height: 100vh;
+	min-width: 100vw;
+    background: linear-gradient(106.83deg, rgba(95, 143, 255, 0.5) 10%, #FF5F5F 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.cart__container{
+	@include desing;
+	box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
+	margin: 88px $mb-3 $mb-3 $mb-3;
+	padding: $mb-1 $mb-4 $mb-2 $mb-4;
+	height: 86vh;
+	width: 100%;
+	max-width: 900px;
+}
+
+.cart__title{
+	text-align: center;
+	margin: $mb-2 0;
+	color: $white-color;
+}
+
+.cart__items{
+	margin-top:  $mb-4;
+	padding: 0 $mb-2;
+	height: 80%;
+	overflow-y: scroll;
+}
+
+.cart__items::-webkit-scrollbar{
+	display: block;
+	width: 8px;
+}
+
+.cart__items::-webkit-scrollbar-thumb{
+	@include desing;
+	border-radius: 8px;
+}
+
+.cart__products{
+    @include desing;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: $mb-2 $mb-4;
+	margin: $mb-2 0 $mb-2 0;
+}
+
+.cart__products:first-child{
+	margin-top: 0;
+}
+
+.cart__products:last-child{
+	margin-bottom: 0;
+}
+
+.cart__products__img{
+	min-width: 90px;
+	min-height: 90px;
+    width: 90px;
+	height: 90px;
+}
+
+.cart__products__data{
+	display: grid;
+	grid-template-columns: 3;
+}
+
+.cart__products__title{
+    display: inline;
+}
+
+.cart__products__price{
+    display: inline;
+}
+
+.edit__quant{
+	display: flex;
+	align-items: center;
+    text-align: center;
+}
+
+.edit__count__btn{
+	@include desing;
+	color: red;
+	padding: 0 8px;
+    border-radius: 80px;
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.quant-input {
+	@include desing;
+	padding: 0 10px;
+	text-align: center;
+	border: none;
+	border-radius: 80px;
+	height: 30px;
+	width: 24px;
+}
+
+.cart-btn {
+	width: 100%;
+}
+
+.remove-cart-btn {
+	margin: 0px 25px;
+}
+
+.delete-btn {
+	background-color: transparent;
+	border:none;
+	color: rgb(197, 38, 38);
+	cursor: pointer;
+	padding: 5px;
+}
+
+.remove__btn{
+	width: 100px;
+	height: 40px;
+	border-radius: 10px;
+}
+
+.cart__bottom{
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-end;
+}
+
+.cart__btn{
+    width: 200px;
+	height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

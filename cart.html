@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>⚡ F1 【Tienda Online】</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="assets/css/sass/main.css">
+
+    <!-- ===== BOXICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="renderCart()">
+    <!--===== HEADER =====-->
+    <header class="header">
+        <nav class="nav">
+            <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
+
+            <div class="nav__link">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#inicio" class="nav-link">INICIO</a></li>
+                    <li class="nav__item"><a href="index.html#tienda" class="nav-link">TIENDA</a></li>
+                    <li class="nav__item"><a href="index.html#contacto" class="nav-link">CONTACTO</a></li>    
+					<li class="nav__item"><a class="logout" onclick="logout()" id="logoutButton"><img class="nav__img" src="./assets/img/logout.svg"></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!--===== CART =====-->
+    <section class="cart">	
+		<div class="cart__container">
+            <h1 class="cart__title">Productos Seleccionados</h1>
+			<div class="cart__items" id="product-container"></div>
+            <div class="cart__bottom">
+                <a class="button cart__btn" href="./index.html">Seguir Comprando</a>
+                <a class="button cart__btn" href="/checkout/checkout.html">Proceder al Pago</a>
+            </div>
+		</div>	
+	</section>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/js/cart.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+.not__container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    padding: $mb-3;
+
+    h1{
+        text-align: center;
+        color: $white-color;
+        font-size: $normal-font-size;
+    }
+}
+
+.not__button{
+  text-align: center;
+  
+  a{
+    color: $white-color;
+  }
+}

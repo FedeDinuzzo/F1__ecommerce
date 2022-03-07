@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+    <title>⚡ F1 【Tienda Online】</title>
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="assets/css/sass/main.css">
+
+    <!-- ===== BOXICONS ===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body onload="getUser()" class="cart__body">
+    <!--===== HEADER =====-->
+    <header class="header">
+        <nav class="nav">
+            <img class="nav__logo" src="assets/img/logo-F1.png" alt="">
+
+            <div class="nav__link">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#inicio" class="nav-link" active>INICIO</a></li>
+                    <li class="nav__item"><a href="#tienda" class="nav-link">TIENDA</a></li>
+                    <li class="nav__item"><a href="#contacto" class="nav-link">CONTACTO</a></li>    
+                    <a class="nav__icon" href="" id="loginButton"><img class="nav__img" src="./assets/img/account.svg"></a>
+                    <a class="nav__icon" onclick="getCart()" id="cartButton"></a>
+                    <a id="basket-container"><span class="basket" id="basket"></span></a>
+                    <a class="nav__icon" onclick="logout()" id="logoutButton"><img class="nav__img" src="./assets/img/logout.svg"></a>
+            </div>
+        </nav>
+    </header>
+
+    <!--===== MODAL =====-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+                <span class="close">&times;</span>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <!--===== HORIZONTAL SCROLL =====-->
+    <div class="outer-wrapper">
+    <div class="wrapper">
+
+    <!--===== HERO =====-->
+    <section class="home slide" id="inicio">
+        <div class="home__container">
+            <div class="home__data">
+                <h1 class="home__title">Vivi la Revolución de las Carerras</h1>
+                <p>Visita nuestra tienda y descubre los ultimos productos que la <b>F1 2022</b> tiene para vos</p>
+                <button class="button home__button" id="iniciarSesion">Iniciar Sesion</button>
+                <button class="home__register" id="registro">¿Todavia no te Registraste?</button>
+            </div>
+            <img class="f1" src="./assets/img/image1.png" alt="">
+        </div>
+    </section>
+
+    <!--===== ECOMMERCE =====-->
+    <!--===== SHOP NAV =====-->
+    <section class="shop slide" id="tienda">
+        <div class="shop__container">
+            <div class="shop__header">
+                <ul class="shop__list">
+                    <a class="shop__link">Comprar por equipo</a>
+                    <li class="shop__item">
+                        <a class="shop__team" onclick="AlfaRomeo()"><img src="assets/img/alfa-romeo.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="AlphaTauri()"><img src="assets/img/alpha-tauri.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getAlpine()"><img src="assets/img/alpine.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getAstonMartin()"><img src="assets/img/aston-martin.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getFerrari()"><img src="assets/img/ferrari.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getHaas()"><img src="assets/img/haas.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getMclaren()"><img src="assets/img/mclaren.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getMercedes()"><img src="assets/img/mercedes.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getRedbull()"><img src="assets/img/red-bull.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getWilliams()"><img src="assets/img/williams.png" class="shop__icon"></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!--===== SHOP SIDE-BAR =====-->
+            <div class="shop__asside">
+                <div class="asside">
+                <form class="search" action="">
+                    <input type="text" placeholder="Buscar.." name="search" class="search__bar">
+                    <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
+                </form>
+        
+                <div class="shop__filter">
+                    <h2>Marcas</h2>
+                    <ul class="filter__list">
+                        <li><a onclick="getAll()">All</a></li>
+                        <li><a onclick="getMobiles()">Mobiles</a></li>
+                        <li><a onclick="getLaptops()">Laptops</a></li>
+                        
+                    </ul>
+                    <ul class="filter__list">
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Formula 1</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Mclaren</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">New Era</label>
+                        <input class="filter__item" type="radio" id="radio"><label for="radio">Puma</label>
+                    </ul>
+                    <h2>Categorias</h2>
+
+        
+                    <h2>Destacados</h2>
+
+                </div>
+                <div class="filter__page">
+                    <h2 class="filter__categorie">Hombre<h2>
+                    <li class="filter__number">1</li>
+                </div>
+            </div>
+            </div>
+
+            <!--===== SHOP PRODUCTS =====-->
+            <div class="shop__main">
+                <div class="shop__card" id="product-container"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!--===== CONTACTO =====-->
+    <section class="contact slide" id="contacto">
+        <div class="contact__container">
+            <!--===== FORM =====-->
+            <form class="contact-form" id="form">
+                <h1 class="contact__title">CONTACTO</h1>
+                <div class="form__section">
+                    <input type="texto" class="in" name="nombre" placeholder='Nombre y apellido' title="Solo acepta letras y espacios en blanco" pattern="^[A-Za-zÑñÁáÉéÍíÓóÜü\s]+$" required>
+                </div>
+                <div class="form__section">
+                    <input type="email" class="in" name="email" placeholder="Escribe tu email" title="Email incorrecto" pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required>
+                </div>
+                <div class="form__section">
+                    <textarea class="textarea" name="comments" rows=20 cols=90 placeholder="Ingrese su consulta..." title="No exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
+                <div class="form__section">
+                    <input class="button" type="submit" value="ENVIAR">
+                </div>
+                <div class="contact-form-loader none">
+                    <img class="loader" src="./assets/img/loader.svg" alt="Cargando">
+                </div>
+                <div class="contact-form-response none"></div>
+        </form>
+        </div>
+    </section>
+    </div>
+    </div>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/jquery-3.6.0.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>
