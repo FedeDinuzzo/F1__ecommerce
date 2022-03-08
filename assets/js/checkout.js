@@ -11,20 +11,19 @@ function renderCheckout() {
 				}
 			}
 		});
-		let rowContainer = document.getElementById('checkout-table-row');
-		rowContainer.innerHTML = "";
+		let checkout = document.getElementById('checkout__view');
+		checkout.innerHTML = "";
 		let total = 0;
-		cartArr.forEach((item, index) => {
+		cartArr.forEach((item) => {
 			total += (+item.quantity * +item.price);
-			rowContainer.innerHTML += `
-			<tr>
-				<td class="t-row">${index + 1}</td>
-				<td class="t-row">${item.name}</td>
-				<td class="t-row">$${item.price}</td>
-				<td class="t-row">${item.quantity}</td>
-				<td class="t-row">₹ ${+item.quantity * +item.price}</td>
-			</tr>
-			`;
+			checkout.innerHTML += 
+			`<div class="checkout__product">
+			    <div class="checkout__item"><img src="${item.imageURL}" class="checkout__img"></div>
+				<div class="checkout__item">${item.name}</div>
+				<div class="checkout__item">$${item.price}</div>
+				<div class="checkout__item">${item.quantity}</div>
+				<div class="checkout__item">$${+item.quantity * +item.price}</div>
+			</tr>`;
 		});
 		document.getElementById('total').innerHTML = total;
 	} else {

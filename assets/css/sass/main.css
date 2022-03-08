@@ -675,6 +675,7 @@ template {
 }
 
 .shop__main {
+  margin-top: 0;
   margin: 0.5rem;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
@@ -812,41 +813,29 @@ template {
   padding: 1rem;
 }
 
-.search {
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 19%, rgba(255, 255, 255, 0.1) 70%);
-  -webkit-backdrop-filter: blur(20px);
-          backdrop-filter: blur(20px);
-  border-radius: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
+/*.search{
+  @include desing;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.search__bar {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.search__bar{
   display: flex;
   width: 70%;
-  margin: 0.5rem;
+  margin: $mb-1;
   text-decoration: none;
   border: none;
   background-color: transparent;
 }
 
-.search__submit {
-  padding: 0.5rem;
-}
-
+.search__submit{
+  padding: $mb-1;
+}*/
 .filter__title {
   margin-left: 0.5rem;
   font-family: 'roboto';
-  margin-top: 80px;
+  margin-top: 20px;
   margin-bottom: 2rem;
   color: red;
 }
@@ -1145,6 +1134,7 @@ template {
 }
 
 .cart__bottom {
+  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1353,40 +1343,87 @@ textarea, .input, .in {
   max-width: 900px;
 }
 
-.checkoutt {
+.checkout__header {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 19%, rgba(255, 255, 255, 0.1) 70%);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2.3fr .6fr .6fr .6fr;
+      grid-template-columns: 1fr 2.3fr .6fr .6fr .6fr;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 2rem 1.5rem 1rem 1.5rem;
+}
+
+.checkout__title {
+  font-family: 'roboto';
+  font-size: 20px;
+  margin: 0 1rem;
+}
+
+.checkout__box {
+  height: 46vh;
+  overflow-y: scroll;
+  margin: 1rem;
+}
+
+.checkout__box::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+}
+
+.checkout__box::-webkit-scrollbar-thumb {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 19%, rgba(255, 255, 255, 0.1) 70%);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border-radius: 8px;
+}
+
+.checkout__product {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 19%, rgba(255, 255, 255, 0.1) 70%);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 20px;
+  margin: 0.5rem 0.5rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2.3fr .7fr .7fr .7fr;
+      grid-template-columns: 1fr 2.3fr .7fr .7fr .7fr;
+}
+
+.checkout__product:first-child {
+  margin-top: 0;
+}
+
+.checkout__product:last-child {
+  margin-bottom: 0;
+}
+
+.checkout__item {
+  font-family: 'roboto';
+  font-size: 18px;
+  color: red;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 1rem;
 }
 
-table {
-  background-color: lightgray;
-  padding: 10px;
-  border-radius: 5px;
-  width: 100%;
+.checkout__item:first-child {
+  margin-left: 1rem;
 }
 
-.t-Head {
-  font-weight: 600;
-  padding: 2px 5px;
-}
-
-.t-row {
-  padding: 5px;
-}
-
-.total-container {
-  width: 100%;
-  text-align: right;
-}
-
-.total-container > span {
-  padding: 10px;
-  display: inline-block;
+.checkout__img {
+  width: 70px;
 }
 
 .textarea__container {
@@ -1394,6 +1431,21 @@ table {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 1.5rem;
+}
+
+.total__price {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.4) 19%, rgba(255, 255, 255, 0.1) 70%);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  border-radius: 20px;
+  display: block;
+  margin: auto 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 200px;
+  font-size: 18px;
+  padding: 1rem;
 }
 
 .not__container {

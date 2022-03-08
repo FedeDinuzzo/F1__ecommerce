@@ -1,11 +1,11 @@
 //Variables
-let CART = "";
+let CART = '';
 let PATH = 'assets/js/products.json';
-const modal = document.getElementById("myModal");
-const modalBody = document.getElementById("modal-body");
-const registro = document.getElementById("registro");
-const modalRegistro = document.getElementById("modalRegistro");
-const iniciarSesion = document.getElementById("iniciarSesion");
+const modal = document.getElementById('myModal');
+const modalBody = document.getElementById('modal-body');
+const registro = document.getElementById('registro');
+const modalRegistro = document.getElementById('modalRegistro');
+const iniciarSesion = document.getElementById('iniciarSesion');
 const contactFormSubmitted = document.getElementById('form');
 
 
@@ -64,10 +64,10 @@ function getUser() {
 		document.getElementById('basket-container').style.display = 'none';
 		loadJSON(PATH);
 	};
-	//Traer todos los productos a la Pagina Princiapl
-	getAll();
 } 
 
+//Traer todos los productos a la Pagina Principal
+getAll();
 
 //Obtención de datos (products.json), y guardado en LocalStorage
 function loadJSON(PATH) {
@@ -103,6 +103,10 @@ function getAll() {
 	renderProducts();
 }
 
+function getCap() {
+	renderProducts('Gorra');
+}
+
 function getPolo() {
 	renderProducts('Chomba');
 }
@@ -119,16 +123,17 @@ function getJacket() {
 	renderProducts('Campera');
 }
 
+
 //Mostrar productos por equipos
 function getAlfaRomeo() {
 	renderProducts('Alfa Romeo');
 }
 
 function getAlphaTauri() {
-	renderProducts('Alpha Tauri');
+	renderProducts('AlphaTauri');
 }
 
-function getgetAlpine() {
+function getAlpine() {
 	renderProducts('Alpine');
 }
 
@@ -140,12 +145,8 @@ function getFerrari() {
 	renderProducts('Ferrari');
 }
 
-function getHaas() {
-	renderProducts('Haas');
-}
-
 function getMclaren() {
-	renderProducts('Mclaren');
+	renderProducts('McLaren');
 }
 
 function getMercedes() {
@@ -157,21 +158,21 @@ function getRedbull() {
 }
 
 function getWilliams() {
-	renderProducts('Williams Racing');
+	renderProducts('Williams');
 }
 
 
 //Renderizar productos de las categorías creadas
 function renderProducts(filter) {
-	let productContainer = document.getElementById('product-container');
+	let productContainer = document.getElementById('product__container');
 	productContainer.innerHTML = "";
 	let data = JSON.parse(localStorage.getItem('products'));
 	data.forEach(item => {
 		if(filter) {
 			if(item.category === filter) {
-				productContainer.innerHTML += `
-				<div class="product__card">
-					<form action="javascript:addToCart('${item.id}')" class="cart-btn">
+				productContainer.innerHTML += 
+				`<div class="product__card">
+					<form action="javascript:addToCart('${item.id}')">
 						<button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
 					</form>	
 					<img src="${item.imageURL}" class="img__card">
@@ -179,9 +180,9 @@ function renderProducts(filter) {
 					<h3 class="product__price">$${item.price}</h3>
 				</div>`;
 			} if(item.team === filter) {
-				productContainer.innerHTML += `
-				<div class="product__card">
-					<form action="javascript:addToCart('${item.id}')" class="cart-btn">
+				productContainer.innerHTML += 
+				`<div class="product__card">
+					<form action="javascript:addToCart('${item.id}')">
 						<button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
 					</form>	
 					<img src="${item.imageURL}" class="img__card">
@@ -190,16 +191,16 @@ function renderProducts(filter) {
 				</div>`;
 			}  
 		} else {
-			productContainer.innerHTML += `
-			<div class="product__card">
-			    <form action="javascript:addToCart('${item.id}')" class="cart-btn">
+			productContainer.innerHTML += 
+			`<div class="product__card">
+			    <form action="javascript:addToCart('${item.id}')">
                     <button class="product__cart" id="add-to-cart" type="submit"><img src="assets/img/grocery.svg"></button>
 				</form>	
                 <img src="${item.imageURL}" class="img__card">
                 <h3 class="product__name">${item.category} / ${item.team}</h3>
                 <h3 class="product__price">$${item.price}</h3>
 			</div>`;
-		} 
+		}
 	});
 }
 
@@ -226,7 +227,6 @@ function addToCart(prodId) {
 		window.alert("Primero debes iniciar sesion.")
 	}
 }
-
 
 //Formulario de contacto - formsubmit API
 function contactForm(){

@@ -71,6 +71,7 @@
 }
 
 .shop__main{
+  margin-top: 0;
   margin: $mb-1;
   grid-area: main;
   overflow-y: scroll;
@@ -172,7 +173,7 @@
   padding: $mb-2;
 }
 
-.search{
+/*.search{
   @include desing;
   display: flex;
   align-items: center;
@@ -190,12 +191,12 @@
 
 .search__submit{
   padding: $mb-1;
-}
+}*/
 
 .filter__title{
   margin-left: $mb-1;
   font-family: 'roboto';
-  margin-top: 80px;
+  margin-top: 20px;
   margin-bottom: $mb-4;
   color: red;
 }

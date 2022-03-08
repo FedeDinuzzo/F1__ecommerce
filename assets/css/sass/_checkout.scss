@@ -16,35 +16,70 @@
     height: 82vh;
 	width: 100%;
 	max-width: 900px;
-
 }
 
-.checkoutt{
-	display: flex;
-	flex-direction: column;
+.checkout__header{
+    @include desing;
+    display: grid;
+    grid-template-columns: 1fr 2.3fr .6fr .6fr .6fr;
+    text-align: center;
+    align-items: center;
+    padding: $mb-1 $mb-2;
+    margin: $mb-4 $mb-3 $mb-2 $mb-3;
 }
 
-table {
-	background-color: lightgray;
-	padding: 10px;
-	border-radius: 5px;
-	width: 100%;
-}
-.t-Head{
-	font-weight: 600;
-	padding: 2px 5px;
-}
-.t-row {
-	padding: 5px;
+.checkout__title{
+    font-family: 'roboto';
+	font-size: 20px;
+    margin: 0 $mb-2;
 }
 
-.total-container {
-	width: 100%;
-	text-align: right;
+.checkout__box{
+    height: 46vh;
+    overflow-y: scroll;
+    margin: $mb-2;
 }
-.total-container > span {
-	padding: 10px;
-	display: inline-block;
+
+.checkout__box::-webkit-scrollbar{
+	display: block;
+	width: 8px;
+}
+
+.checkout__box::-webkit-scrollbar-thumb{
+	@include desing;
+	border-radius: 8px;
+}
+
+.checkout__product{
+    @include desing;
+    margin: $mb-1 $mb-1;
+    display: grid;
+    grid-template-columns: 1fr 2.3fr .7fr .7fr .7fr;
+}
+
+.checkout__product:first-child{
+    margin-top: 0;
+}
+
+.checkout__product:last-child{
+    margin-bottom: 0;
+}
+
+.checkout__item{
+    font-family: 'roboto';
+	font-size: 18px;
+    color: red;
+    display: flex;
+    align-items: center;
+    padding: $mb-2 $mb-2;
+}
+
+.checkout__item:first-child{
+    margin-left: $mb-2;
+}
+
+.checkout__img{
+    width: 70px;
 }
 
 .textarea__container{
@@ -52,6 +87,12 @@ table {
     margin-bottom: $mb-3;
 }
 
-.cart__bottom{
-
+.total__price{
+    @include desing;
+    display: block;
+    margin: auto $mb-2;
+    align-items: center;
+    width: 200px;
+	font-size: 18px;
+    padding: $mb-2;
 }

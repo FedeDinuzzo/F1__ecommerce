@@ -83,12 +83,11 @@
                 <ul class="shop__list">
                     <a class="shop__link">Comprar por equipo</a>
                     <li class="shop__item">
-                        <a class="shop__team" onclick="AlfaRomeo()"><img src="assets/img/alfa-romeo.png" class="shop__icon"></a>
-                        <a class="shop__team" onclick="AlphaTauri()"><img src="assets/img/alpha-tauri.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getAlfaRomeo()"><img src="assets/img/alfa-romeo.png" class="shop__icon"></a>
+                        <a class="shop__team" onclick="getAlphaTauri()"><img src="assets/img/alpha-tauri.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getAlpine()"><img src="assets/img/alpine.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getAstonMartin()"><img src="assets/img/aston-martin.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getFerrari()"><img src="assets/img/ferrari.png" class="shop__icon"></a>
-                        <a class="shop__team" onclick="getHaas()"><img src="assets/img/haas.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getMclaren()"><img src="assets/img/mclaren.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getMercedes()"><img src="assets/img/mercedes.png" class="shop__icon"></a>
                         <a class="shop__team" onclick="getRedbull()"><img src="assets/img/red-bull.png" class="shop__icon"></a>
@@ -100,15 +99,16 @@
             <!--===== SHOP SIDE-BAR =====-->
             <div class="shop__asside">
                 <div class="asside">
-                    <form class="search" action="">
+                    <!--<form class="search" action="">
                         <input type="text" placeholder="Buscar.." name="search" class="search__bar">
                         <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
-                    </form>
+                    </form>-->
         
                     <div class="shop__filter">
                         <h2 class="filter__title">Filtrar Productos</h2>
                         <ul class="filter__list">
                             <a class="filter__type" onclick="getAll()">Todos</a></li>
+                            <a class="filter__type" onclick="getCap()">Gorras</a></li>
                             <a class="filter__type" onclick="getPolo()">Chombas</a></li>
                             <a class="filter__type" onclick="getTShirt()">Remeras</a></li>
                             <a class="filter__type" onclick="getHoodie()">Buzos</a></li>
@@ -120,7 +120,7 @@
 
             <!--===== SHOP PRODUCTS =====-->
             <div class="shop__main">
-                <div class="shop__card" id="product-container"></div>
+                <div class="shop__card" id="product__container"></div>
             </div>
         </div>
     </section>

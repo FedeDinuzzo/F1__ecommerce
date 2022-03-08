@@ -20,32 +20,21 @@
 		<img class="background__img img__vertical" src="assets/img/background.png">
 		<div class="checkout__container">
 			<h1 class="cart__title">Carrito</h1>
-			<div class="checkoutt">
-				<table id="checkout-table">
-					<tr>
-						<thead>
-							<td class="t-Head">Sl No.</td>
-							<td class="t-Head">Item Name</td>
-							<td class="t-Head">Item Price</td>
-							<td class="t-Head">Quantity</td>
-							<td class="t-Head">Item Total</td>
-						</thead>
-					</tr>
-					<tbody id="checkout-table-row" ></tbody>
-				</table>
-					<div class="total-container">
-						<span class="t-Head">
-							Total: $
-							<span id="total"></span>
-						</span>
-					</div>
+			<div class="checkout__header">
+				<div></div>
+				<div class="checkout__title">Producto</div>
+				<div class="checkout__title">Precio</div>
+				<div class="checkout__title">Cantidad</div>
+				<div class="checkout__title">Total</div>
 			</div>
+            <div class="checkout__box" id="checkout__view"></div>
 			<div class="textarea__container">
-				<textarea name="" id="" cols="30" rows="10" class="input-textarea" placeholder="Delivery Address"></textarea>
+				<textarea cols="20" rows="1" placeholder="Direccion de envio"></textarea>
+				<div class="total__price">Total: $<span id="total"></span></div>
 			</div>
 			<div class="cart__bottom">
                 <a class="button cart__btn" href="./cart.html">Volver al Carrito</a>
-                <a class="button cart__btn" href="./checkout.html">Confirmar Compra</a>
+                <a onclick="confirmPurchase()" id="confirmPurchase" class="button cart__btn">Confirmar Compra</a>
             </div>
 		</div>
 	</section>
