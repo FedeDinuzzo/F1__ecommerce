@@ -3,14 +3,15 @@ let CART = "";
 let PATH = 'assets/js/products.json';
 const modal = document.getElementById("myModal");
 const modalBody = document.getElementById("modal-body");
-const iniciarSesion = document.getElementById("iniciarSesion");
 const registro = document.getElementById("registro");
+const modalRegistro = document.getElementById("modalRegistro");
+const iniciarSesion = document.getElementById("iniciarSesion");
 const contactFormSubmitted = document.getElementById('form');
 
 
 $(() => {
 //Abrir Modal
-$('#iniciarSesion, #loginButton, #registro').on('click', () => {
+$('#iniciarSesion, #registro, #account').on('click', () => {
     $('.modal').css({'display': 'block'});
 })
 
@@ -27,56 +28,22 @@ window.onclick = (e) => {
 })
 
 
-//Registro
-function showRegistro() {
-    let div = document.createElement("div");
-            div.innerHTML = 
-    `<form action="javascript:register()" class="form-container">
-			<input class="form-control" type="text" name="firstName" id="firstName" placeholder="Nombre" required/>
-			<input class="form-control" type="text" name="lastName" id="lastName" placeholder="Apellido" required/>
-			<input class="form-control" type="email" name="email" id="email" placeholder="Correo electronico" required/>
-			<input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required/>
-			<button type="submit" class="button modal__button">Crear cuenta</button>
-	</form>`
-    modalBody.appendChild(div);
-
-    function removeR() {
-        modalBody.removeChild(div);
-    }
-
-    registro.addEventListener('click', removeR);  
+//Modal Registro
+function showRegistro() { 
+	document.getElementById('log').style.display = 'none';
+    document.getElementById('reg').style.display = 'block';
 }
-
 registro.addEventListener('click', showRegistro);
+modalRegistro.addEventListener('click', showRegistro);
 
 
-//Iniciar Sesion
+//Modal Iniciar Sesion
 function showIniciarSesion() {
-let div = document.createElement("div");
-        div.innerHTML = 
-
-		`<form action="javascript:login()">
-            <div class="form-floating">
-				<input class="form-control" type="email" name="loginEmail" id="loginEmail" placeholder="Correo electronico" required />
-            </div>
-            <div class="form-floating">
-				<input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="Constraseña" required />
-            </div>	
-                <button type="submit" class="button modal__button">Iniciar sesión</button>
-				
-		</form>`;
-
-        modalBody.appendChild(div);
-
-    function remove() {
-        modalBody.removeChild(div);
-    }
-
-    iniciarSesion.addEventListener('click', remove);  
+	document.getElementById('reg').style.display = 'none';
+    document.getElementById('log').style.display = 'block';
 }
-
 iniciarSesion.addEventListener('click', showIniciarSesion);
-
+account.addEventListener('click', showIniciarSesion);
 
 //Verificación de usuario
 function getUser() {
@@ -87,8 +54,10 @@ function getUser() {
 		let currentUserCartKey = 'cart_' + currUserId;
 		count = JSON.parse(localStorage.getItem(currentUserCartKey || "[]")).length;
 		document.getElementById('basket').innerHTML = count;
-		document.getElementById('loginButton').style.display = 'none';
+		document.getElementById('account').style.display = 'none';
 		document.getElementById('cartButton').innerHTML = '<img class="nav__img" src="./assets/img/grocery.svg">';
+		iniciarSesion.style.display = 'none';
+		registro.style.display = 'none';
 	} else {
 		document.getElementById('cartButton').innerHTML = '<img class="nav__img" src="./assets/img/grocery.svg">';
 		document.getElementById('logoutButton').style.display = 'none';
@@ -109,7 +78,7 @@ function loadJSON(PATH) {
 				let data = JSON.parse(xhr.responseText);
 				localStorage.setItem('products', JSON.stringify(data));
 			} else {
-				window.alert('Algo salió mal al Buscar!');
+				window.alert('Algo salió mal al buscar!');
 			}
 		}
 	};
@@ -123,7 +92,7 @@ function getCart() {
 	if(sessionStorage.getItem('isAuthenticated')) {
 		window.location = '../cart.html'
 	} else {
-		alert("Debes Iniciar Sesion para utilizar el Carrito");
+		alert("Debes iniciar sesion para utilizar el carrito");
 		window.location = './index.html';
 	}
 }
@@ -134,12 +103,20 @@ function getAll() {
 	renderProducts();
 }
 
-function getMobiles() {
-	renderProducts('Polo');
+function getPolo() {
+	renderProducts('Chomba');
 }
 
-function getLaptops() {
-	renderProducts('Hoodie');
+function getTShirt() {
+	renderProducts('Remera');
+}
+
+function getHoodie() {
+	renderProducts('Buzo');
+}
+
+function getJacket() {
+	renderProducts('Campera');
 }
 
 //Mostrar productos por equipos
@@ -184,7 +161,7 @@ function getWilliams() {
 }
 
 
-//Eenderizar productos basados ​​en las categorías dadas
+//Renderizar productos de las categorías creadas
 function renderProducts(filter) {
 	let productContainer = document.getElementById('product-container');
 	productContainer.innerHTML = "";
@@ -199,7 +176,7 @@ function renderProducts(filter) {
 					</form>	
 					<img src="${item.imageURL}" class="img__card">
 					<h3 class="product__name">${item.category} / ${item.team}</h3>
-					<h3 class="product__price">$${item.price}</h3></div>
+					<h3 class="product__price">$${item.price}</h3>
 				</div>`;
 			} if(item.team === filter) {
 				productContainer.innerHTML += `
@@ -209,7 +186,7 @@ function renderProducts(filter) {
 					</form>	
 					<img src="${item.imageURL}" class="img__card">
 					<h3 class="product__name">${item.category} / ${item.team}</h3>
-					<h3 class="product__price">$${item.price}</h3></div>
+					<h3 class="product__price">$${item.price}</h3>
 				</div>`;
 			}  
 		} else {
@@ -220,7 +197,7 @@ function renderProducts(filter) {
 				</form>	
                 <img src="${item.imageURL}" class="img__card">
                 <h3 class="product__name">${item.category} / ${item.team}</h3>
-                <h3 class="product__price">$${item.price}</h3></div>
+                <h3 class="product__price">$${item.price}</h3>
 			</div>`;
 		} 
 	});
@@ -245,9 +222,8 @@ function addToCart(prodId) {
 		}
 		localStorage.setItem(currentUserCartKey, JSON.stringify(CART));
 		window.location.reload();
-		window.location.href="index.html #tienda".reload();
 	} else {
-		window.alert("Primero debes Iniciar Sesion.")
+		window.alert("Primero debes iniciar sesion.")
 	}
 }
 
@@ -310,7 +286,6 @@ contactFormSubmitted.addEventListener("submit", (e) => {
         },3000));
 });
 }
-
 document.addEventListener("DOMContentLoaded", contactForm);
 
 

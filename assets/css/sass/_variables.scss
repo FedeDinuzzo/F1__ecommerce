@@ -88,22 +88,19 @@ ul{
 a{
   text-decoration: none;
   color: $white-color;
+  cursor: pointer;
 }
 
 img{
   max-width: 100%;
   height: auto;
-  transition: .5s;
-
-  &:hover{
-    transform:scale(1.02);
-  }
 }
 
 button{
   border: none;
   text-decoration: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 /*===== CLASS CSS ===== */
@@ -151,4 +148,21 @@ h3{
 p{
   font-size: $normal-font-size;
   font-family: 'roboto';
+}
+
+.background__img{
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.img__vertical{
+  height: 800px;
+}
+
+.background__img__shop{
+  transform: rotate(180deg);
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
 }

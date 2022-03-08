@@ -7,9 +7,6 @@
     <title>⚡ F1 【Tienda Online】</title>
     <link rel="shortcut icon" href="">
     <link rel="stylesheet" href="assets/css/sass/main.css">
-
-    <!-- ===== BOXICONS ===== -->
-    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body onload="getUser()" class="cart__body">
     <!--===== HEADER =====-->
@@ -22,7 +19,7 @@
                     <li class="nav__item"><a href="#inicio" class="nav-link" active>INICIO</a></li>
                     <li class="nav__item"><a href="#tienda" class="nav-link">TIENDA</a></li>
                     <li class="nav__item"><a href="#contacto" class="nav-link">CONTACTO</a></li>    
-                    <a class="nav__icon" href="" id="loginButton"><img class="nav__img" src="./assets/img/account.svg"></a>
+                    <a class="nav__icon" id="account"><img class="nav__img" src="./assets/img/account.svg"></a>
                     <a class="nav__icon" onclick="getCart()" id="cartButton"></a>
                     <a id="basket-container"><span class="basket" id="basket"></span></a>
                     <a class="nav__icon" onclick="logout()" id="logoutButton"><img class="nav__img" src="./assets/img/logout.svg"></a>
@@ -32,9 +29,25 @@
 
     <!--===== MODAL =====-->
     <div id="myModal" class="modal">
-        <div class="modal-content">
+        <div class="modal__container">
                 <span class="close">&times;</span>
-            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-body" id="modal-body">
+                <form action="javascript:login()" id="log">
+                    <p class="modal__title">Iniciar Sesion</p>
+                    <input class="modal__input" type="email" name="loginEmail" id="loginEmail" placeholder="Correo electronico" required/>
+                    <input class="modal__input" type="password" name="loginPassword" id="loginPassword" placeholder="Constraseña" required/>
+                    <button type="submit" class="button modal__button">Iniciar sesión</button>  
+                    <button class="home__register modal__subButton" id="modalRegistro">¿Todavia no te Registraste?</button>      
+                </form>      
+                <form action="javascript:register()" id="reg">
+                    <p class="modal__title">Registrarse</p>
+                    <input class="modal__input" type="text" name="firstName" id="firstName" placeholder="Nombre" required/>
+                    <input class="modal__input" type="text" name="lastName" id="lastName" placeholder="Apellido" required/>
+                    <input class="modal__input" type="email" name="email" id="email" placeholder="Correo electronico" required/>
+                    <input class="modal__input" type="password" name="password" id="password" placeholder="Contraseña" required/>
+                    <button type="submit" class="button modal__button">Crear cuenta</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -53,11 +66,18 @@
             </div>
             <img class="f1" src="./assets/img/image1.png" alt="">
         </div>
+        <div class="social">
+            <a href="https://www.facebook.com/Formula1/" target="_blank"><img src="assets/img/social-fb.png" class="social__icons"></a>
+            <a href="https://www.instagram.com/f1/" target="_blank"><img src="assets/img/social-ig.png" class="social__icons"></a>
+            <a href="https://www.youtube.com/c/F1" target="_blank"><img src="assets/img/social-yt.png" class="social__icons"></a>
+            <a href="https://twitter.com/F1" target="_blank"><img src="assets/img/social-tw.png" class="social__icons"></a>
+        </div>
     </section>
 
     <!--===== ECOMMERCE =====-->
     <!--===== SHOP NAV =====-->
     <section class="shop slide" id="tienda">
+            <img class="background__img__shop" src="assets/img/background.png">
         <div class="shop__container">
             <div class="shop__header">
                 <ul class="shop__list">
@@ -80,36 +100,22 @@
             <!--===== SHOP SIDE-BAR =====-->
             <div class="shop__asside">
                 <div class="asside">
-                <form class="search" action="">
-                    <input type="text" placeholder="Buscar.." name="search" class="search__bar">
-                    <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
-                </form>
+                    <form class="search" action="">
+                        <input type="text" placeholder="Buscar.." name="search" class="search__bar">
+                        <button type="submit" class="search__submit"><img src="assets/img/search.png" class="shop__icon"></button>
+                    </form>
         
-                <div class="shop__filter">
-                    <h2>Marcas</h2>
-                    <ul class="filter__list">
-                        <li><a onclick="getAll()">All</a></li>
-                        <li><a onclick="getMobiles()">Mobiles</a></li>
-                        <li><a onclick="getLaptops()">Laptops</a></li>
-                        
-                    </ul>
-                    <ul class="filter__list">
-                        <input class="filter__item" type="radio" id="radio"><label for="radio">Formula 1</label>
-                        <input class="filter__item" type="radio" id="radio"><label for="radio">Mclaren</label>
-                        <input class="filter__item" type="radio" id="radio"><label for="radio">New Era</label>
-                        <input class="filter__item" type="radio" id="radio"><label for="radio">Puma</label>
-                    </ul>
-                    <h2>Categorias</h2>
-
-        
-                    <h2>Destacados</h2>
-
+                    <div class="shop__filter">
+                        <h2 class="filter__title">Filtrar Productos</h2>
+                        <ul class="filter__list">
+                            <a class="filter__type" onclick="getAll()">Todos</a></li>
+                            <a class="filter__type" onclick="getPolo()">Chombas</a></li>
+                            <a class="filter__type" onclick="getTShirt()">Remeras</a></li>
+                            <a class="filter__type" onclick="getHoodie()">Buzos</a></li>
+                            <li><a class="filter__type" onclick="getJacket()">Camperas</a></li>                  
+                        </ul>
+                    </div>
                 </div>
-                <div class="filter__page">
-                    <h2 class="filter__categorie">Hombre<h2>
-                    <li class="filter__number">1</li>
-                </div>
-            </div>
             </div>
 
             <!--===== SHOP PRODUCTS =====-->
@@ -122,6 +128,8 @@
     <!--===== CONTACTO =====-->
     <section class="contact slide" id="contacto">
         <div class="contact__container">
+            <img class="background__img" src="assets/img/background.png">
+            <img class="contact__img" src="assets/img/f1-contact.png">
             <!--===== FORM =====-->
             <form class="contact-form" id="form">
                 <h1 class="contact__title">CONTACTO</h1>
@@ -134,13 +142,19 @@
                 <div class="form__section">
                     <textarea class="textarea" name="comments" rows=20 cols=90 placeholder="Ingrese su consulta..." title="No exceder los 255 caracteres" data-pattern="^.{1,255}$" required></textarea>
                 <div class="form__section">
-                    <input class="button" type="submit" value="ENVIAR">
+                    <input class="button contact__btn" type="submit" value="ENVIAR">
                 </div>
                 <div class="contact-form-loader none">
                     <img class="loader" src="./assets/img/loader.svg" alt="Cargando">
                 </div>
                 <div class="contact-form-response none"></div>
-        </form>
+            </form>
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/Formula1/" target="_blank"><img src="assets/img/social-fb.png" class="social__icons"></a>
+            <a href="https://www.instagram.com/f1/" target="_blank"><img src="assets/img/social-ig.png" class="social__icons"></a>
+            <a href="https://www.youtube.com/c/F1" target="_blank"><img src="assets/img/social-yt.png" class="social__icons"></a>
+            <a href="https://twitter.com/F1" target="_blank"><img src="assets/img/social-tw.png" class="social__icons"></a>
         </div>
     </section>
     </div>

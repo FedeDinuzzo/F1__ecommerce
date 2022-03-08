@@ -16,21 +16,21 @@ function renderCart() {
 		});
 		cartArr.forEach( (item, index) => {
 			cartContainer.innerHTML += `
-		    <div class="cart__products">
-			    <div class="cart__products__img">
+		    <div class="cart__product">
+			    <div class="cart__product__img">
 			    	<img src="${item.imageURL}" alt="prod-image">
 			    </div>
-			    <div class="cart__products__data" >
-				    <h2 id="cart__products__title">${item.name}</h2>
-				    <h2 id="cart__products__price">${item.price}</h2>
+			    <div class="cart__product__data" >
+				    <h2 id="cart__product__title">${item.name}</h2>
+				    <h2 id="cart__product__price">$${item.price}</h2>
 				    <span class="edit__quant">
-					    <button class="edit__count__btn" onClick="removeByOne('${index}')"><p>-</p></button>
-				        <input type="text" name="quantity" id="quantity" class="quant-input" value="${item.quantity}" readonly>
-					    <button class="edit__count__btn" onClick="addByOne('${index}')"><p>+</p></button>
+					    <button class="edit__count__btn" onClick="removeByOne('${index}')"><img src="assets/img/remove.svg"></button>
+				        <input type="text" name="quantity" id="quantity" class="quant__input" value="${item.quantity}" readonly>
+					    <button class="edit__count__btn" onClick="addByOne('${index}')"><img src="assets/img/add.svg"></button>
 					</span>
 			    </div>
-			    <form action="javascript:removeFromCart('${index}')" class="remove-cart-btn">
-				    <button class="button remove__btn" id="remove-from-cart" type="submit">Quitar</button>
+			    <form action="javascript:removeFromCart('${index}')" class="remove__cart">
+				    <button id="remove-from-cart" type="submit"><img src="assets/img/delete.svg"></button>
 			    </form>
 		    </div>`;
 		})

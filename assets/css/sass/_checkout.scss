@@ -1,0 +1,57 @@
+.checkout{ 
+    height: 100vh;
+	width: 100vw;
+    background: linear-gradient(106.83deg, rgba(95, 143, 255, 0.5) 10%, #FF5F5F 100%);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.checkout__container {
+	@include desing;
+	box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
+	margin: 90px $mb-3 $mb-3 $mb-3;
+	padding: $mb-1 $mb-4 $mb-2 $mb-4;
+    height: 82vh;
+	width: 100%;
+	max-width: 900px;
+
+}
+
+.checkoutt{
+	display: flex;
+	flex-direction: column;
+}
+
+table {
+	background-color: lightgray;
+	padding: 10px;
+	border-radius: 5px;
+	width: 100%;
+}
+.t-Head{
+	font-weight: 600;
+	padding: 2px 5px;
+}
+.t-row {
+	padding: 5px;
+}
+
+.total-container {
+	width: 100%;
+	text-align: right;
+}
+.total-container > span {
+	padding: 10px;
+	display: inline-block;
+}
+
+.textarea__container{
+    display: flex;
+    margin-bottom: $mb-3;
+}
+
+.cart__bottom{
+
+}

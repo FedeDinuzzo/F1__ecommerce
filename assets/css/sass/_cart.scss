@@ -11,9 +11,9 @@
 .cart__container{
 	@include desing;
 	box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
-	margin: 88px $mb-3 $mb-3 $mb-3;
+	margin: 90px $mb-3 $mb-3 $mb-3;
 	padding: $mb-1 $mb-4 $mb-2 $mb-4;
-	height: 86vh;
+	height: 82vh;
 	width: 100%;
 	max-width: 900px;
 }
@@ -41,100 +41,87 @@
 	border-radius: 8px;
 }
 
-.cart__products{
+.cart__product{
     @include desing;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 	padding: $mb-2 $mb-4;
 	margin: $mb-2 0 $mb-2 0;
 }
 
-.cart__products:first-child{
+.cart__product:first-child{
 	margin-top: 0;
 }
 
-.cart__products:last-child{
+.cart__product:last-child{
 	margin-bottom: 0;
 }
 
-.cart__products__img{
-	min-width: 90px;
-	min-height: 90px;
-    width: 90px;
-	height: 90px;
+.cart__product__img{
+	flex-basis: 120px;
+	display: flex;
+	justify-content: center;
 }
 
-.cart__products__data{
-	display: grid;
-	grid-template-columns: 3;
+.cart__product__data{
+	display: flex;
+	align-items: center;
+	margin: 0px 10px;
+	height: 100px;
+	width: 100%;
+	justify-content: space-between;
 }
 
-.cart__products__title{
+#cart__product__title{
+	font-family: 'roboto';
+	font-size: 16px;
     display: inline;
+    color: red;
+
 }
 
-.cart__products__price{
-    display: inline;
+#cart__product__price{
+	position: absolute;
+	right: 33%;
 }
 
 .edit__quant{
 	display: flex;
-	align-items: center;
-    text-align: center;
 }
 
 .edit__count__btn{
-	@include desing;
-	color: red;
-	padding: 0 8px;
-    border-radius: 80px;
-	margin: 0 5px;
+	padding-top: 4px;
 	cursor: pointer;
+	margin: 0 5px;
 }
 
-.quant-input {
+.quant__input {
 	@include desing;
-	padding: 0 10px;
 	text-align: center;
 	border: none;
-	border-radius: 80px;
-	height: 30px;
-	width: 24px;
+	border-radius: 200px;
+	max-width: 40px;
 }
 
-.cart-btn {
+.cart__btn {
 	width: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+	width: 200px;
+	height: 50px;
 }
 
-.remove-cart-btn {
+.remove__cart {
 	margin: 0px 25px;
-}
 
-.delete-btn {
-	background-color: transparent;
-	border:none;
-	color: rgb(197, 38, 38);
-	cursor: pointer;
-	padding: 5px;
-}
-
-.remove__btn{
-	width: 100px;
-	height: 40px;
-	border-radius: 10px;
+	&:hover{
+        transform: scale(1.1);
+	}
 }
 
 .cart__bottom{
 	display: flex;
 	justify-content: space-evenly;
 	align-items: flex-end;
-}
-
-.cart__btn{
-    width: 200px;
-	height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }

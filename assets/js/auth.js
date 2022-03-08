@@ -28,12 +28,12 @@ function register() {
 		localStorage.setItem('Users', JSON.stringify(users));
 		localStorage.setItem(userCart, JSON.stringify([]));
 		window.location = 'index.html'
-		window.alert("Usuario creado con exito. Ahora iniciar sesion para continuar!");
+		window.alert("Usuario creado con exito. inicia sesion para continuar!");
 	} else {
 		localStorage.setItem('Users', JSON.stringify([newUser]));
 		localStorage.setItem(userCart, JSON.stringify([]));
 		window.location = 'index.html'
-		window.alert("Usuario creado con exito. Ahora iniciar sesion para continuar!");
+		window.alert("Usuario creado con exito. inicia sesion para continuar!");
 	} 
 }
 
@@ -60,7 +60,7 @@ function login() {
 		sessionStorage.setItem('isAuthenticated', true);
 		window.location = 'index.html'
 	} else {
-		window.alert("Email o Contraseña incorrectos. Volve a intentar!");
+		window.alert("Email o Contraseña incorrectos. volve a intentar!");
 	}
 }
 

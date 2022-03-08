@@ -11,6 +11,16 @@
     align-content: center;
     min-height: 100vh;
   }
+
+  .contact__img{
+    height: 71vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
   
   .contact-form{
     min-width: 450px;
@@ -49,7 +59,7 @@
     width: 100%;
   }
       
-  .button{
+  .contact__btn{
     font-family: 'Open Sans';
     margin: $mb-2 0 $mb-2 0;
   }

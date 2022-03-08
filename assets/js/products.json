@@ -1,7 +1,7 @@
 [
 	{
 		"id": "001",
-        "category": "Hoodie",
+        "category": "Buzo",
         "team": "Mercedes Benz",
 		"name": "Chinese New Year Special Edition",
 		"price": "101",
@@ -9,7 +9,7 @@
 	},
 	{
 		"id": "002",
-        "category": "T-Shirt",
+        "category": "Remera",
         "team": "Red Bull",
 		"name": "2021 Special Edition Mexico GP",
 		"price": "43",
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": "003",
-        "category": "Polo",
+        "category": "Chomba",
         "team": "Aston Martin",
 		"name": "F1 2021 Official Team",
 		"price": "35",
@@ -25,7 +25,7 @@
 	},
 	{
 		"id": "004",
-        "category": "Polo",
+        "category": "Chomba",
         "team": "Williams Racing",
 		"name": "2021 - Navy",
 		"price": "90",
@@ -33,7 +33,7 @@
 	},
     {
 		"id": "005",
-        "category": "Jacket",
+        "category": "Campera",
         "team": "Mercedes Benz",
 		"name": "Performance",
 		"price": "180",
@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "006",
-        "category": "Polo",
+        "category": "Chomba",
         "team": "Mercedes Benz",
 		"name": "F1 2021 - Black",
 		"price": "85",
@@ -49,7 +49,7 @@
 	},
 	{
 		"id": "007",
-        "category": "Hoodie",
+        "category": "Buzo",
         "team": "Mclaren",
 		"name": "Essential Logo - Grey",
 		"price": "210",
@@ -57,7 +57,7 @@
 	},
 	{
 		"id": "008",
-        "category": "T-Shirt",
+        "category": "Remera",
         "team": "Red Bull",
 		"name": "2021 Max Verstappen World Champion",
 		"price": "72",

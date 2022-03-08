@@ -1,0 +1,155 @@
+// faq 1
+let element = document.getElementById("showText");
+let bottonDown = document.getElementById("turn-down");
+let boldText = document.getElementById("bolder");
+
+function divShow() {
+  element.classList.toggle("displayDiv");
+  bottonDown.classList.toggle("active");
+  boldText.classList.toggle("bolder-turn");
+}
+
+iniciarSesion.addEventListener('click', divShow);
+
+// faq 2
+let element2 = document.getElementById("showText2");
+let bottonDown2 = document.getElementById("turn-down2");
+let boldText2 = document.getElementById("bolder2");
+
+function divShow2() {
+  element2.classList.toggle("displayDiv");
+  bottonDown2.classList.toggle("active");
+  boldText2.classList.toggle("bolder-turn");
+}
+
+registro.addEventListener('click', divShow2);
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal__button{
+    width: 220px;
+    height: 60px;
+}
+
+
+.faq {
+    width: 60%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq h1 {
+    margin-bottom: 20px;
+    color: red;
+  }
+  
+  .faq label {
+    border-bottom: 1px solid #030303;
+    padding-bottom: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-weight: 400px;
+  }
+  
+  .faq label:hover {
+    cursor: pointer;
+  }
+  
+  .faq label > button {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    padding: 0;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .faq label > button:hover {
+    cursor: pointer;
+  }
+  
+  .noneDiv {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 2s ease-in-out;
+  }
+  
+  .displayDiv {
+    display: block;
+    max-height: 1000px;
+    overflow: hidden;
+    width: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    transition: all 2s ease-in-out;
+  }
+  
+  .hideDiv {
+    display: none;
+    height: 0px;
+    overflow: hidden;
+    transition: all 2s ease-in-out;
+  }
+  
+  .active,
+  .active2,
+  .active3,
+  .active4,
+  .active5 {
+    transform: rotate(180deg);
+    transition: all 0.3s ease-in;
+  }
+  
+  .bolder-turn,
+  .bolder-turn2,
+  .bolder-turn3,
+  .bolder-turn4,
+  .bolder-turn5 {
+    font-weight: bold;
+    color: #000;
+  }
+  
+
+  
+  <label id="bolder">Iniciar Sesion
+  <button onclick="divShow()">
+    <i id="turn-down"><i class="fas fa-angle-down"></i></i>
+  </button>
+</label>
+<div id="showText" class="noneDiv"><form action="javascript:login()" class="form-container">
+  <div class="form-floating">
+      <input class="form-control" type="email" name="loginEmail" id="loginEmail" placeholder="Correo electronico" required />
+  </div>
+  <div class="form-floating">
+      <input class="form-control" type="password" name="loginPassword" id="loginPassword" placeholder="Constraseña" required />
+  </div>	
+      <button type="submit" class="button modal__button">Iniciar sesión</button> 
+</form>
+</div>   
+
+<label id="bolder2">REGISTRARSE
+  <button onclick="divShow2()">
+    <i id="turn-down2"><i class="fas fa-angle-down"></i></i>
+  </button>
+</label>
+<div id="showText2" class="noneDiv">
+  <form action="javascript:register()" class="form-container">
+  <input class="form-control" type="text" name="firstName" id="firstName" placeholder="Nombre" required/>
+  <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Apellido" required/>
+  <input class="form-control" type="email" name="email" id="email" placeholder="Correo electronico" required/>
+  <input class="form-control" type="password" name="password" id="password" placeholder="Contraseña" required/>
+  <button type="submit" class="button modal__button">Crear cuenta</button>
+  </form>
+</div>
