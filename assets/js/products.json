@@ -1,90 +1,314 @@
 [
 	{
 		"id": "001",
-        "category": "Buzo",
-        "team": "Mercedes Benz",
-		"name": "Chinese New Year Special Edition",
-		"price": "101",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/one.png?raw=true"
+        "category": "Gorra",
+        "team": "Alfa Romeo",
+		"name": "F1 2021 Team",
+		"price": "11",
+		"imageURL": ""
 	},
 	{
 		"id": "002",
-        "category": "Remera",
-        "team": "Red Bull",
-		"name": "2021 Special Edition Mexico GP",
-		"price": "43",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/2.png?raw=true"
+        "category": "Gorra",
+        "team": "Alpine",
+		"name": "F1 Team 2022 New Era Special Edition",
+		"price": "37",
+		"imageURL": ""
 	},
 	{
 		"id": "003",
-        "category": "Chomba",
+        "category": "Gorra",
         "team": "Aston Martin",
-		"name": "F1 2021 Official Team",
+		"name": "F1 2022 Official Team - Black",
 		"price": "35",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/3.png?raw=true"
+		"imageURL": ""
 	},
 	{
 		"id": "004",
-        "category": "Chomba",
-        "team": "Williams Racing",
-		"name": "2021 - Navy",
-		"price": "90",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/4.png?raw=true"	
+        "category": "Gorra",
+        "team": "McLaren",
+		"name": "2022 New Era Lando Norris",
+		"price": "39",
+		"imageURL": ""
 	},
-    {
+	{
 		"id": "005",
-        "category": "Campera",
+        "category": "Gorra",
         "team": "Mercedes Benz",
-		"name": "Performance",
-		"price": "180",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/5.png?raw=true"
+		"name": "AMG Petronas F1 2022 Lewis Hamilton - White",
+		"price": "38",
+		"imageURL": ""
 	},
 	{
 		"id": "006",
-        "category": "Chomba",
-        "team": "Mercedes Benz",
-		"name": "F1 2021 - Black",
-		"price": "85",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/6.png?raw=true"	
+        "category": "Gorra",
+        "team": "Red Bull Racing",
+		"name": "Oracle Racing",
+		"price": "38",
+		"imageURL": ""
 	},
 	{
 		"id": "007",
-        "category": "Buzo",
-        "team": "Mclaren",
-		"name": "Essential Logo - Grey",
-		"price": "210",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+        "category": "Gorra",
+        "team": "AlphaTauri",
+		"name": "2021 Italian GP",
+		"price": "25",
+		"imageURL": ""
 	},
 	{
 		"id": "008",
+        "category": "Gorra",
+        "team": "Ferrari",
+		"name": "2022 Team",
+		"price": "33",
+		"imageURL": ""
+	},
+	{
+		"id": "009",
         "category": "Remera",
-        "team": "Red Bull",
-		"name": "2021 Max Verstappen World Champion",
-		"price": "72",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/8.png?raw=true"	
+        "team": "Alfa Romeo",
+		"name": "F1 Team ORLEN 2022 Team",
+		"price": "45",
+		"imageURL": ""
 	},
 	{
 		"id": "010",
-        "category": "hoodie",
-        "team": "Mclaren",
-		"name": "Essential Logo - Grey",
-		"price": "210",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+        "category": "Remera",
+        "team": "Aston Martin",
+		"name": "Cognizant F1 2022 Official Team",
+		"price": "55",
+		"imageURL": ""
 	},
 	{
 		"id": "011",
-        "category": "hoodie",
-        "team": "Mclaren",
-		"name": "Essential Logo - Grey",
-		"price": "210",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+        "category": "Remera",
+        "team": "Alpine",
+		"name": "F1 Team 2022 - Blue",
+		"price": "50",
+		"imageURL": ""
 	},
 	{
 		"id": "012",
-        "category": "hoodie",
-        "team": "Mclaren",
+        "category": "Remera",
+        "team": "McLaren",
 		"name": "Essential Logo - Grey",
-		"price": "210",
-		"imageURL": "https://github.com/FedeDinuzzo/F1__ecommerce/blob/main/assets/img/products/7.png?raw=true"
+		"price": "29",
+		"imageURL": ""
+	},
+	{
+		"id": "013",
+        "category": "Remera",
+        "team": "Mercedes Benz",
+		"name": "AMG Petronas F1 2022 Team - White",
+		"price": "52",
+		"imageURL": ""
+	},
+	{
+		"id": "014",
+        "category": "Remera",
+        "team": "Red Bull",
+		"name": "Racing 2021 Special Edition Mexico GP Team",
+		"price": "28",
+		"imageURL": ""
+	},
+	{
+		"id": "015",
+        "category": "Remera",
+        "team": "Ferrari",
+		"name": "2022 Team",
+		"price": "57",
+		"imageURL": ""
+	},
+	{
+		"id": "016",
+        "category": "Remera",
+        "team": "Williams",
+		"name": " Racing 2022 Team - Navy",
+		"price": "50",
+		"imageURL": ""
+	},
+	{
+		"id": "017",
+        "category": "Chomba",
+        "team": "Alfa Romeo",
+		"name": "F1 2021 Team",
+		"price": "70",
+		"imageURL": ""
+	},
+	{
+		"id": "018",
+        "category": "Chomba",
+        "team": "Aston Martin",
+		"name": "F1 2021 Official Team",
+		"price": "46",
+		"imageURL": ""
+	},
+	{
+		"id": "019",
+        "category": "Chomba",
+        "team": "Alpine",
+		"name": "F1 Team 2022 - White",
+		"price": "70",
+		"imageURL": ""
+	},
+	{
+		"id": "020",
+        "category": "Chomba",
+        "team": "McLaren",
+		"name": "2021 Team Daniel Ricciardo",
+		"price": "70",
+		"imageURL": ""
+	},
+	{
+		"id": "021",
+        "category": "Chomba",
+        "team": "Mercedes Benz",
+		"name": "AMG Petronas F1 2022 Team - Black",
+		"price": "66",
+		"imageURL": ""
+	},
+	{
+		"id": "022",
+        "category": "Chomba",
+        "team": "Red Bull",
+		"name": "Oracle Racing Seasonal",
+		"price": "57",
+		"imageURL": ""
+	},
+	{
+		"id": "023",
+        "category": "Chomba",
+        "team": "AlphaTauri",
+		"name": "2021 Team - White",
+		"price": "46",
+		"imageURL": ""
+	},
+	{
+		"id": "024",
+        "category": "Chomba",
+        "team": "Ferrari",
+		"name": "Puma Classic - Black",
+		"price": "52",
+		"imageURL": ""
+	},
+	{
+		"id": "025",
+        "category": "Chomba",
+        "team": "Williams",
+		"name": "Racing 2022 Team - Blue",
+		"price": "60",
+		"imageURL": ""
+	},
+	{
+		"id": "026",
+        "category": "Buzo",
+        "team": "Alpine",
+		"name": "F1 Team Fanwear Full Zip",
+		"price": "80",
+		"imageURL": ""
+	},
+	{
+		"id": "027",
+        "category": "Buzo",
+        "team": "Alfa Romeo",
+		"name": "Kimi by West Coast Choppers Leave Me Alone",
+		"price": "80",
+		"imageURL": ""
+	},
+	{
+		"id": "028",
+        "category": "Buzo",
+        "team": "McLaren",
+		"name": "Essential Logo - Orange",
+		"price": "70",
+		"imageURL": ""
+	},
+	{
+		"id": "029",
+        "category": "Buzo",
+		"team": "Mercedes Benz",
+		"name": "AMG Petronas F1 2022 Chinese New Year Special",
+		"price": "76",
+		"imageURL": ""
+	},
+	{
+		"id": "030",
+        "category": "Buzo",
+        "team": "Red Bull",
+		"name": "Oracle Racing - Grey",
+		"price": "76",
+		"imageURL": ""
+	},
+	{
+		"id": "031",
+        "category": "Buzo",
+        "team": "AlphaTauri",
+		"name": "2021 Team Sweat",
+		"price": "70",
+		"imageURL": ""
+	},
+	{
+		"id": "032",
+        "category": "Buzo",
+        "team": "Ferrari",
+		"name": "Puma - Red",
+		"price": "66",
+		"imageURL": ""
+	},
+	{
+		"id": "033",
+        "category": "Campera",
+        "team": "Aston Martin",
+		"name": "Cognizant F1 2022 Official Team",
+		"price": "150",
+		"imageURL": ""
+	},
+	{
+		"id": "034",
+        "category": "Campera",
+        "team": "Alpine",
+		"name": "F1 Team 2022",
+		"price": "110",
+		"imageURL": ""
+	},
+	{
+		"id": "035",
+        "category": "Campera",
+        "team": "Alfa Romeo",
+		"name": "Kimi by West Coast Choppers Signature Tech",
+		"price": "120",
+		"imageURL": ""
+	},
+	{
+		"id": "036",
+        "category": "Campera",
+        "team": "Mercedes Benz",
+		"name": "AMG Petronas F1",
+		"price": "114",
+		"imageURL": ""
+	},
+	{
+		"id": "037",
+        "category": "Campera",
+        "team": "Red Bull",
+		"name": "Oracle Racing",
+		"price": "114",
+		"imageURL": ""
+	},
+	{
+		"id": "038",
+        "category": "Campera",
+        "team": "Ferrari",
+		"name": "Race SDS Track by Puma",
+		"price": "104",
+		"imageURL": ""
+	},
+	{
+		"id": "039",
+        "category": "Campera",
+        "team": "Williams",
+		"name": "Racing 2022 Team Performance",
+		"price": "160",
+		"imageURL": ""
 	}
 ]
