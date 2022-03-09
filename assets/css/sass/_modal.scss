@@ -15,7 +15,7 @@
 
 .modal__container {
     position: relative;
-    background: linear-gradient(113deg, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0.2) 56%);
+    background: linear-gradient(113deg, rgba(255, 255, 255, 0.5) 30%, rgba(255, 255, 255, 0.2) 60%);
     margin: auto;
     width: 30%;
     text-align: center;
@@ -27,6 +27,7 @@
 }
 
 .modal__title{
+    margin-top: $mb-4;
     padding: $mb-2;
 }
 

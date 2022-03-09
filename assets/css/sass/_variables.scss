@@ -33,7 +33,7 @@
 }
 
 /*===== VARIABLES CSS =====*/
-$header-height: 4rem;
+$header-height: 3.5rem;
 
 /*===== COLORES =====*/
 $first-color: #FF0000;
@@ -54,10 +54,10 @@ $gray-color-light: #FFFFFF2B;
   src: url('../../img/Formula1-Bold.ttf') format('truetype');
 };
 
-$h1-font-size: 3.5rem;
-$h2-font-size: 1.25rem;
-$normal-font-size: 1.5rem;
-$small-font-size: 1rem;
+$h1-font-size: 2.75rem;
+$h2-font-size: 1rem;
+$normal-font-size: 1.15rem;
+$small-font-size: 0.8rem;
 
 /*===== MARGENES =====*/
 $mb-1: .5rem;
@@ -107,9 +107,9 @@ button{
 .button{
   background: linear-gradient(110deg, #FF0000 8%, #C60000 94%);
   box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+  border-radius: 16px;
   width: 260px;
-  height: 70px;
+  height: 66px;
   color: $white-color;
   border: none;
   transition: .5s;

@@ -9,11 +9,11 @@
     justify-content: center;
     align-items: center;
     align-content: center;
-    min-height: 100vh;
+    height: 100vh;
   }
 
   .contact__img{
-    height: 71vh;
+    height: 68vh;
     position: absolute;
     top: 0;
     left: 0;
@@ -23,10 +23,9 @@
   }
   
   .contact-form{
-    min-width: 450px;
+    min-width: 400px;
     width: 30%;
-    min-height: 56vh;
-    max-height: 80vh;
+    height: fit-content;
     @include desing;
     box-shadow: 0px 4px 20px -1px rgba(0, 0, 0, 0.25);
     text-align: center;
@@ -42,26 +41,28 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    padding: $mb-2 $mb-4;
+    padding: $mb-1 $mb-4;
   }
 
   textarea, .input, .in{
     font-family: 'roboto';
-    font-size: $h2-font-size;
+    font-size: $normal-font-size;
     background: linear-gradient(113deg, rgba(255, 255, 255, 0.5) 25%, rgba(255, 255, 255, 0.2) 56%);
     color: $white-color;
-    padding: $mb-2;
-    margin: 0 $mb-4;
-    border-radius: 18px;
+    padding: $mb-2 $mb-2;
+    margin: 0 $mb-2;
+    border-radius: 12px;
     border: none;
     resize: none;
-    max-height: 200px;
+    height: auto;
     width: 100%;
   }
       
   .contact__btn{
     font-family: 'Open Sans';
-    margin: $mb-2 0 $mb-2 0;
+    margin: $mb-1 0 $mb-4 0;
+    width: 200px;
+    height: 50px;
   }
 
   .contact-form-loader{
@@ -70,8 +71,8 @@
 
   .loader{
     padding: $mb-1;
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
   }
 
   .form__submitted{
